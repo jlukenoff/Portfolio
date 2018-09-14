@@ -12,7 +12,24 @@ class App extends Component {
 
   render() {
     return (
-      <div className={styles.rootComponent}>hello from react</div>
+      <div className={styles.rootComponent}>
+        <div className={styles.title}>
+          Hello,
+          <br />
+          {'I\'m John'}
+          <br />
+          and I build
+          <br />
+          web apps.
+        </div>
+        <div className={styles.nav}>
+          <ul>
+            <li><button type="button" className={styles.navButton}>Projects</button></li>
+            <li><button type="button" className={styles.navButton}>Tech</button></li>
+            <li><button type="button" className={styles.navButton}>About Me</button></li>
+          </ul>
+        </div>
+      </div>
     );
   }
 }

@@ -1,9 +1,49 @@
 .rootComponent {
-  background-image: url(https://s3-us-west-1.amazonaws.com/johnportfolio/background-main.jpg);
+  background-image: url(https://s3-us-west-1.amazonaws.com/johnportfolio/background-main2.jpg);
   background-size: cover;
+  font-family: Circular, 'Helvetica-Nueue', sans-serif;
   position: fixed;
-  width: 100%;
+  min-width: 100%;
   min-height: 100%;
   top: 0;
   left: 0;
+  color: #ffffff;
+}
+
+.nav {
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.title {
+  font-size: 6.5em;
+  position: absolute;
+  text-align: right;
+  float: right;
+  top: 35%;
+  right: 2%;
+}
+
+.navButton {
+  color: #ffffff;
+  margin-bottom: 5px;
+  font-size: 1.5em;
+  background-color: transparent;
+  border: none;
+  transition: font-size 0.3s ease;
+  background-color: rgba(83, 83, 83, 0.479);
+}
+
+.navButton:hover {
+  font-size: 1.8em;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  min-height: 40px;
 }
