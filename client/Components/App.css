@@ -1,0 +1,9 @@
+.rootComponent {
+  background-image: url(https://s3-us-west-1.amazonaws.com/johnportfolio/background-main.jpg);
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+}
