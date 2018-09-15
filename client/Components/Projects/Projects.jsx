@@ -1,11 +1,14 @@
 import React from 'react';
+import styles from './Projects.css';
 // import PropTypes from 'prop-types';
 
-const App = props => (
-  <div>hello from react</div>
+const Projects = () => (
+  <div className={styles.projects}>
+    <div className={styles.projectNav} />
+  </div>
 );
 
-// App.propTypes = {
+// Projects.propTypes = {
 // };
 
-export default App;
+export default Projects;
