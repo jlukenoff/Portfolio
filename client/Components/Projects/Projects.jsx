@@ -4,7 +4,19 @@ import styles from './Projects.css';
 
 const Projects = () => (
   <div className={styles.projects}>
-    <div className={styles.projectNav} />
+    <ul className={styles.nav}>
+      <li>
+        <button type="button" className={styles.navButton} onClick={() => {}}>
+          Vacation.ly
+        </button>
+        <button type="button" className={styles.navButton} onClick={() => {}}>
+          Shopr
+        </button>
+        <button type="button" className={styles.navButton} onClick={() => {}}>
+          {'W&B Calculation Tool'}
+        </button>
+      </li>
+    </ul>
   </div>
 );
 

@@ -1,0 +1,23 @@
+.navButton {
+  color: #ffffff;
+  margin-bottom: 5px;
+  font-size: 1.5em;
+  background-color: transparent;
+  border: none;
+  transition: font-size 0.3s ease;
+  background-color: rgba(83, 83, 83, 0.479);
+}
+
+.navButton:hover {
+  font-size: 1.8em;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  min-height: 40px;
+}
