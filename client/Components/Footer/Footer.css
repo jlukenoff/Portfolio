@@ -1,0 +1,22 @@
+.footer {
+  position: fixed;
+  width: 10%;
+  display: flex;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(116, 116, 116, 0.323);
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.footerLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 10%;
+}
+
+.footerIcon {
+  height: 30px;
+}
