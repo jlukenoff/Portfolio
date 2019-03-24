@@ -9,6 +9,7 @@
     "dev:start": "nodemon server/index.js",
     "dev:client": "webpack -w",
     "build": "webpack -p",
+    "docker-compose": "docker run -d -p 8080:3000 -v $(pwd):/src/app --name mern-boilerplate jlukenoff/mern-boilerplate",
     "heroku-postbuild": "webpack -p"
   },
   "jest": {
