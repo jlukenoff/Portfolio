@@ -1,11 +1,17 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
+import styled from '@emotion/styled';
 
-import styles from './Child.css';
+const Container = styled.div`
+  width: 80%;
+  margin: auto;
+  line-height: 20px;
+  text-align: center;
+  background-color: red;
+  color: white;
+`;
 
-const Child = () => (
-  <div className={styles.childContainer}>First dummy component here</div>
-);
+const Child = () => <Container>First dummy component here</Container>;
 
 // Child.propTypes = {
 // };

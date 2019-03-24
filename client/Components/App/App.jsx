@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import styled from '@emotion/styled';
 
-// import PropTypes from 'prop-types';
-
-import styles from './App.css';
+const Container = styled.div`
+  width: 80%;
+  margin: auto;
+  line-height: 20px;
+  text-align: center;
+  background-color: red;
+  color: white;
+`;
 
 class App extends Component {
   constructor(props) {
@@ -13,9 +19,7 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className={styles.rootContainer}>hello from react</div>
-    );
+    return <Container>hello from react</Container>;
   }
 }
 
