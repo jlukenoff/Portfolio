@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-import styled from '@emotion/styled';
-
-const Container = styled.div`
-  width: 80%;
-  margin: auto;
-  line-height: 20px;
-  text-align: center;
-  background-color: red;
-  color: white;
-`;
+import { Container } from '../Styles/Styles';
 
 class App extends Component {
   constructor(props) {
