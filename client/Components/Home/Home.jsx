@@ -1,8 +1,10 @@
 import React from 'react';
+import { Page } from 'react-pdf';
 import {
   ModuleContainer,
   SubTitleText,
   HorizontalBlock,
+  StyledDocument,
 } from '../Styles/Styles';
 // import PropTypes from 'prop-types';
 
@@ -18,6 +20,10 @@ const Home = props => (
       eius voluptates molestias adipisci tenetur quos nobis tempora nemo quis ab
       quibusdam perspiciatis. Reiciendis!
     </HorizontalBlock>
+
+    <StyledDocument file="/resume.pdf">
+      <Page pageNumber={1} />
+    </StyledDocument>
   </ModuleContainer>
 );
 

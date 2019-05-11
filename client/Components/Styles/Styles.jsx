@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { NavLink, Link } from 'react-router-dom';
+import { Document } from 'react-pdf';
 
 export const RootContainer = styled.div`
   @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:400,700,900');
@@ -133,4 +134,17 @@ export const ContactInfoContainer = styled.div`
   margin-left: auto;
   text-align: right;
   color: #fff;
+`;
+
+export const StyledDocument = styled(Document)`
+  width: 80%;
+  height: 400px;
+  margin: 50px auto;
+  overflow-y: scroll;
+
+  canvas {
+    margin: auto;
+    height: auto !important;
+    width: 100% !important;
+  }
 `;
