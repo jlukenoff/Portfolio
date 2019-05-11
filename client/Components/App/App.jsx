@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import { Container } from '../Styles/Styles';
+import { Switch, Route } from 'react-router-dom';
+import Nav from '../Nav/Nav';
+import Home from '../Home/Home';
+import {
+  RootContainer,
+  Gradient,
+  BackgroundImageContainer,
+  ContentContainer,
+} from '../Styles/Styles';
 
 class App extends Component {
   constructor(props) {
@@ -10,7 +18,20 @@ class App extends Component {
   }
 
   render() {
-    return <Container>hello from react</Container>;
+    const { props, state } = this;
+    return (
+      <RootContainer>
+        <BackgroundImageContainer />
+        <Gradient />
+        <Nav {...state} {...props} />
+        <Switch>
+          <Route
+            path="/"
+            render={routeProps => <Home {...props} {...routeProps} />}
+          />
+        </Switch>
+      </RootContainer>
+    );
   }
 }
 
