@@ -2,9 +2,12 @@ import styled from '@emotion/styled';
 import { NavLink, Link } from 'react-router-dom';
 
 export const RootContainer = styled.div`
-  @import url('https://fonts.googleapis.com/css?family=Raleway');
+  @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:400,700,900');
 
   font-family: Raleway;
+  width: 100%;
+  position: absolute;
+  left: 0;
 `;
 
 export const BackgroundImageContainer = styled.div`
@@ -46,6 +49,9 @@ export const ContentContainer = styled.div`
   width: 100%;
 `;
 export const ModuleContainer = styled.div`
+  display: flex;
+  flex-flow: column;
+  font-weight: 700;
   height: 1000px;
 `;
 
@@ -76,4 +82,23 @@ export const PageTitle = styled(Link)`
   font-size: 2em;
   color: #000;
   text-decoration: none;
+`;
+
+export const SubTitleText = styled.h2`
+  font-size: 3em;
+  margin: 100px 10%;
+  font-weight: 700;
+`;
+
+export const HorizontalBlock = styled.div`
+  background-color: #fff;
+  padding: 30px 10%;
+  font-family: Montserrat;
+  line-height: 25px;
+  min-height: 200px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  -ms-letter-spacing: 0.8px;
+  letter-spacing: 0.8px;
 `;
