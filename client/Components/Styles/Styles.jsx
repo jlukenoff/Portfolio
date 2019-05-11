@@ -16,7 +16,7 @@ export const BackgroundImageContainer = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-  background: url(https://s3-us-west-1.amazonaws.com/johnportfolio/portfolio_pic.jpg)
+  background: url(https://s3-us-west-1.amazonaws.com/johnportfolio/bence-balla-schottner-1570185-unsplash.jpg)
     left top / cover no-repeat;
   z-index: -2;
 
@@ -101,4 +101,36 @@ export const HorizontalBlock = styled.div`
   justify-content: space-around;
   -ms-letter-spacing: 0.8px;
   letter-spacing: 0.8px;
+`;
+
+export const StyledFooter = styled.footer`
+  height: 100px;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+`;
+
+export const NavIcon = styled.i`
+  font-size: 30px;
+  color: #000;
+`;
+
+export const LinkContainer = styled.a`
+  text-decoration: none;
+  color: #fff;
+`;
+
+export const SocialLinksContainer = styled.div`
+  min-width: 200px;
+  display: flex;
+  justify-content: space-evenly;
+`;
+
+export const ContactInfoContainer = styled.div`
+  justify-self: flex-end;
+  margin-left: auto;
+  text-align: right;
+  color: #fff;
 `;

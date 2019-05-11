@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Nav from '../Nav/Nav';
 import Home from '../Home/Home';
+import Footer from '../Footer/Footer';
 import {
   RootContainer,
   Gradient,
   BackgroundImageContainer,
-  ContentContainer,
 } from '../Styles/Styles';
 
 class App extends Component {
@@ -30,6 +30,7 @@ class App extends Component {
             render={routeProps => <Home {...props} {...routeProps} />}
           />
         </Switch>
+        <Footer />
       </RootContainer>
     );
   }
