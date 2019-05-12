@@ -7,8 +7,6 @@ export const RootContainer = styled.div`
 
   font-family: Raleway;
   width: 100%;
-  position: absolute;
-  left: 0;
 `;
 
 export const BackgroundImageContainer = styled.div`
@@ -41,6 +39,11 @@ export const NavContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
+  @media only screen and (max-width: 425px) {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
 `;
 
 export const ContentContainer = styled.div`
@@ -53,7 +56,7 @@ export const ModuleContainer = styled.div`
   display: flex;
   flex-flow: column;
   font-weight: 700;
-  height: auto;
+  min-height: 400px;
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -83,6 +86,11 @@ export const PageTitle = styled(Link)`
   font-size: 2em;
   color: #000;
   text-decoration: none;
+
+  @media only screen and (max-width: 425px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 export const SubTitleText = styled.h2`
@@ -152,4 +160,54 @@ export const CenteredImage = styled.img`
   width: 70%;
   height: auto;
   margin: 20px auto;
+`;
+
+export const LogoImage = styled.img`
+  width: 70px;
+  height: auto;
+`;
+
+export const TechWidgetContainer = styled.div`
+  width: 80%;
+  margin: 0 auto 100px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  height: auto;
+  align-items: baseline;
+`;
+
+export const TechWidgetEntry = styled.div`
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #e5e5e5;
+  margin: 15px;
+  font-size: 2em;
+  font-weight: 400;
+`;
+
+export const WidgetHeader = styled.div`
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #b9b9b9;
+`;
+
+export const WidgetBody = styled.div``;
+export const WidgetDescription = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px 0;
+  font-size: 0.5em;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+`;
+
+export const ToggleArrow = styled.button`
+  background: transparent;
+  border: none;
+  color: #000;
+  justify-self: flex-end;
+  margin-left: auto;
 `;
