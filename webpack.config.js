@@ -15,21 +15,21 @@ module.exports = {
     path: OUTPUT_DIR,
   },
   devtool: 'source-map',
-  mode: 'development',
+  mode: isProd ? 'production' : 'development',
   resolve: { extensions: ['.js', '.jsx'] },
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     compress: true,
     port: 8080,
   },
-  plugins: isProd
-    ? [
-        new CompressionPlugin({
-          test: /\.js(\?.*)?$/i,
-        }),
-        new BundleAnalyzerPlugin(),
-      ]
-    : [],
+  // plugins: isProd
+  //   ? [
+  //       new CompressionPlugin({
+  //         test: /\.js(\?.*)?$/i,
+  //       }),
+  //       new BundleAnalyzerPlugin(),
+  //     ]
+  //   : [],
   module: {
     rules: [
       {
