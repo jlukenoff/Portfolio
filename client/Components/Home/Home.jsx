@@ -21,6 +21,7 @@ const Home = props => (
       quibusdam perspiciatis. Reiciendis!
     </HorizontalBlock>
 
+    {/* TODO: make this a modal to reduce bundle size */}
     <StyledDocument file="/resume.pdf">
       <Page pageNumber={1} />
     </StyledDocument>

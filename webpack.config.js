@@ -1,8 +1,12 @@
 const path = require('path');
+const CompressionPlugin = require('compression-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const ENTRY_POINT = path.resolve(__dirname, 'client/index.jsx');
 
 const OUTPUT_DIR = path.resolve(__dirname, 'public');
+
+const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: ENTRY_POINT,
@@ -18,6 +22,14 @@ module.exports = {
     compress: true,
     port: 8080,
   },
+  plugins: isProd
+    ? [
+        new CompressionPlugin({
+          test: /\.js(\?.*)?$/i,
+        }),
+        new BundleAnalyzerPlugin(),
+      ]
+    : [],
   module: {
     rules: [
       {

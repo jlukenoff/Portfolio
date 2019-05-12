@@ -124,7 +124,7 @@ export const LinkContainer = styled.a`
 `;
 
 export const SocialLinksContainer = styled.div`
-  min-width: 200px;
+  width: 120px;
   display: flex;
   justify-content: space-evenly;
 `;

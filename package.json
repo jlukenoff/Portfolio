@@ -8,7 +8,7 @@
     "test": "jest",
     "dev:start": "nodemon --inspect server/index.js",
     "dev:build": "webpack -w",
-    "build": "webpack -p",
+    "build": "webpack -p --progress",
     "docker-compose": "docker run -d -p 8080:3000 -v $(pwd):/src/app --name mern-boilerplate jlukenoff/mern-boilerplate",
     "heroku-postbuild": "webpack -p"
   },
@@ -61,9 +61,11 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "compression-webpack-plugin": "^2.0.0",
     "css-loader": "^1.0.0",
     "style-loader": "^0.23.0",
     "webpack": "^4.20.2",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.1.2"
   }
 }

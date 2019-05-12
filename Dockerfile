@@ -1,4 +1,9 @@
 #image to build upon
+
+# - on raspberry pi
+#FROM arm32v7/node
+
+# - on local
 FROM node:7.6-alpine
 
 #make the directory within container for source code to live
