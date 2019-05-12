@@ -4,7 +4,7 @@ import {
   ModuleContainer,
   SubTitleText,
   HorizontalBlock,
-  StyledDocument,
+  CenteredImage,
 } from '../Styles/Styles';
 // import PropTypes from 'prop-types';
 
@@ -21,10 +21,14 @@ const Home = props => (
       quibusdam perspiciatis. Reiciendis!
     </HorizontalBlock>
 
+    <CenteredImage
+      src="https://s3-us-west-1.amazonaws.com/johnportfolio/resume.png"
+      alt="Resume"
+    />
     {/* TODO: make this a modal to reduce bundle size */}
-    <StyledDocument file="/resume.pdf">
+    {/* <StyledDocument file="/resume.pdf">
       <Page pageNumber={1} />
-    </StyledDocument>
+    </StyledDocument> */}
   </ModuleContainer>
 );
 

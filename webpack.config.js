@@ -1,6 +1,6 @@
 const path = require('path');
-const CompressionPlugin = require('compression-webpack-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+// const CompressionPlugin = require('compression-webpack-plugin');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const ENTRY_POINT = path.resolve(__dirname, 'client/index.jsx');
 

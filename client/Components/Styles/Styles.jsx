@@ -53,7 +53,7 @@ export const ModuleContainer = styled.div`
   display: flex;
   flex-flow: column;
   font-weight: 700;
-  height: 1000px;
+  height: auto;
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -100,7 +100,6 @@ export const HorizontalBlock = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: space-around;
-  -ms-letter-spacing: 0.8px;
   letter-spacing: 0.8px;
 `;
 
@@ -138,7 +137,7 @@ export const ContactInfoContainer = styled.div`
 
 export const StyledDocument = styled(Document)`
   width: 80%;
-  height: 400px;
+  height: auto;
   margin: 50px auto;
   overflow-y: scroll;
 
@@ -147,4 +146,10 @@ export const StyledDocument = styled(Document)`
     height: auto !important;
     width: 100% !important;
   }
+`;
+
+export const CenteredImage = styled.img`
+  width: 70%;
+  height: auto;
+  margin: 20px auto;
 `;
