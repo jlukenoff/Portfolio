@@ -6,10 +6,11 @@ import {
   SubTitleText,
   HorizontalBlock,
   CenteredImage,
+  RightSubTitleText,
 } from '../Styles/Styles';
 // import PropTypes from 'prop-types';
 
-const Home = props => (
+const Home = () => (
   <ReactCSSTransitionsGroup
     transitionName="module"
     transitionAppear
@@ -29,6 +30,7 @@ const Home = props => (
         nemo quis ab quibusdam perspiciatis. Reiciendis!
       </HorizontalBlock>
 
+      <SubTitleText style={{ marginBottom: '20px' }}>My Resume</SubTitleText>
       <CenteredImage
         src="https://s3-us-west-1.amazonaws.com/johnportfolio/resume.png"
         alt="Resume"
