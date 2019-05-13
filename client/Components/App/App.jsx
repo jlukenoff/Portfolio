@@ -5,6 +5,7 @@ import Nav from '../Nav/Nav';
 import Home from '../Home/Home';
 import Tech from '../Tech/Tech';
 import Footer from '../Footer/Footer';
+import Projects from '../Projects/Projects';
 import {
   RootContainer,
   Gradient,
@@ -36,6 +37,10 @@ class App extends Component {
         <Gradient />
         <Nav {...state} {...props} />
         <Switch>
+          <Route
+            path="/projects"
+            render={routeProps => <Projects {...props} {...routeProps} />}
+          />
           <Route
             path="/tech"
             render={routeProps => <Tech {...props} {...routeProps} />}

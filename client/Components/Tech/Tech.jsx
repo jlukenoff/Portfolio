@@ -32,7 +32,7 @@ const TechWidget = ({ name, description, projectList, logoSrc }) => {
       {showDescription && (
         <WidgetBody>
           <WidgetDescription>
-            {description}
+            {`\t${description}`}
             <br />
             <h3>Projects:</h3> {projectList.join(', ')}
           </WidgetDescription>
@@ -46,7 +46,7 @@ const sampleTechPayload = [
   {
     name: 'React',
     description:
-      "I've used react in many project to create dynamic and powerful user interfaces",
+      'React is my front-end framework of choice, I always do my best to write very clean and modular, and exercise best practices in state management.',
     projectList: [
       'Narvar Internal Tooling',
       'Vacation.ly',

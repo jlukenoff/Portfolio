@@ -34,7 +34,7 @@ export const Gradient = styled.div`
 `;
 export const NavContainer = styled.div`
   width: 90%;
-  margin: 10px auto;
+  margin: 10px auto 100px;
   height: 50px;
   display: flex;
   justify-content: flex-end;
@@ -56,7 +56,11 @@ export const ModuleContainer = styled.div`
   display: flex;
   flex-flow: column;
   font-weight: 700;
-  min-height: 400px;
+  min-height: 800px;
+
+  @media only screen and (max-width: 420px) {
+    align-items: center;
+  }
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -95,8 +99,13 @@ export const PageTitle = styled(Link)`
 
 export const SubTitleText = styled.h2`
   font-size: 3em;
-  margin: 100px 10%;
+  margin: 0 10% 150px;
   font-weight: 700;
+`;
+
+export const RightSubTitleText = styled(SubTitleText)`
+  justify-self: flex-end;
+  margin-left: auto;
 `;
 
 export const HorizontalBlock = styled.div`
@@ -106,9 +115,10 @@ export const HorizontalBlock = styled.div`
   line-height: 25px;
   min-height: 200px;
   display: flex;
-  flex-flow: column;
-  justify-content: space-around;
+  flex-flow: row;
+  justify-content: flex-start;
   letter-spacing: 0.8px;
+  margin-bottom: 200px;
 `;
 
 export const StyledFooter = styled.footer`
@@ -208,6 +218,30 @@ export const ToggleArrow = styled.button`
   background: transparent;
   border: none;
   color: #000;
+  justify-self: flex-end;
+  margin-left: auto;
+`;
+
+export const RightVideoContainer = styled.div`
+  width: 456px;
+  height: 380px;
+  border: 1px solid #ccc;
+  position: absolute;
+  right: 10%;
+  margin-top: -100px;
+  background-color: #e5e5e5;
+  border-radius: 5px;
+`;
+
+export const LeftVideoContainer = styled(RightVideoContainer)`
+  left: 10%;
+`;
+
+export const LeftTextBlock = styled.div`
+  width: calc(80% - 400px);
+`;
+
+export const RightTextBlock = styled(LeftTextBlock)`
   justify-self: flex-end;
   margin-left: auto;
 `;
