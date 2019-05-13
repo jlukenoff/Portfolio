@@ -2,4 +2,8 @@ node_modules
 bundle.**
 coverage
 .DS_Store
-*.pdf
+**.pdf
+**.svg
+**.jpg
+**.png
+/public/**.js

@@ -1,12 +1,21 @@
 import styled from '@emotion/styled';
 import { NavLink, Link } from 'react-router-dom';
-import { Document } from 'react-pdf';
+// import { Document } from 'react-pdf';
 
 export const RootContainer = styled.div`
   @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:400,700,900');
 
   font-family: Raleway;
   width: 100%;
+
+  .module-appear {
+    opacity: 0.01;
+  }
+
+  .module-appear.module-appear-active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+  }
 `;
 
 export const BackgroundImageContainer = styled.div`
@@ -153,18 +162,18 @@ export const ContactInfoContainer = styled.div`
   color: #fff;
 `;
 
-export const StyledDocument = styled(Document)`
-  width: 80%;
-  height: auto;
-  margin: 50px auto;
-  overflow-y: scroll;
+// export const StyledDocument = styled(Document)`
+//   width: 80%;
+//   height: auto;
+//   margin: 50px auto;
+//   overflow-y: scroll;
 
-  canvas {
-    margin: auto;
-    height: auto !important;
-    width: 100% !important;
-  }
-`;
+//   canvas {
+//     margin: auto;
+//     height: auto !important;
+//     width: 100% !important;
+// }
+// `;
 
 export const CenteredImage = styled.img`
   width: 70%;

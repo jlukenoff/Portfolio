@@ -47,9 +47,11 @@
     "nodemon": "^1.18.10",
     "prop-types": "^15.6.2",
     "react": "^16.8.6",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.8.6",
     "react-pdf": "^4.0.5",
     "react-router-dom": "^5.0.0",
+    "react-transition-group": "^4.0.1",
     "supertest": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
   },

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactCSSTransitionsGroup from 'react-addons-css-transition-group';
 import {
   ModuleContainer,
   TechWidgetContainer,
@@ -150,14 +151,22 @@ const sampleTechPayload = [
 ];
 
 const Tech = props => (
-  <ModuleContainer>
-    <SubTitleText>Tech Experience</SubTitleText>
-    <TechWidgetContainer>
-      {sampleTechPayload.map(obj => (
-        <TechWidget {...obj} />
-      ))}
-    </TechWidgetContainer>
-  </ModuleContainer>
+  <ReactCSSTransitionsGroup
+    transitionName="module"
+    transitionAppear
+    transitionAppearTimeout={500}
+    transitionEnter={false}
+    transitionLeave={false}
+  >
+    <ModuleContainer key="tech">
+      <SubTitleText>Tech Experience</SubTitleText>
+      <TechWidgetContainer>
+        {sampleTechPayload.map(obj => (
+          <TechWidget {...obj} />
+        ))}
+      </TechWidgetContainer>
+    </ModuleContainer>
+  </ReactCSSTransitionsGroup>
 );
 
 // Tech.propTypes = {
