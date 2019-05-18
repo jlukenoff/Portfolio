@@ -11,7 +11,6 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: OUTPUT_DIR,
-    pubilcPath: '/',
   },
   devtool: 'source-map',
   mode: isProd ? 'production' : 'development',
