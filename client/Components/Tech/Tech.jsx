@@ -15,16 +15,14 @@ import {
 
 const TechWidget = ({ name, description, projectList, logoSrc, logoColor }) => {
   const [showDescription, toggleDescription] = useState(false);
-  console.log('logoSrc:', logoSrc);
   return (
     <TechWidgetEntry>
       <WidgetHeader>
-        <StyledSvg src={logoSrc} fillColor={logoColor} />
+        <StyledSvg src={logoSrc} fillcolor={logoColor} />
         {name}
         <ToggleArrow
           onClick={() => toggleDescription(!showDescription)}
-          type="button"
-        >
+          type="button">
           <NavIcon
             className={`fa fa-chevron-${showDescription ? 'down' : 'left'}`}
             ariaHidden="true"
@@ -165,13 +163,12 @@ const Tech = props => (
     transitionAppear
     transitionAppearTimeout={500}
     transitionEnter={false}
-    transitionLeave={false}
-  >
+    transitionLeave={false}>
     <ModuleContainer key="tech">
       <SubTitleText>Tech Experience</SubTitleText>
       <TechWidgetContainer>
         {sampleTechPayload.map(obj => (
-          <TechWidget {...obj} />
+          <TechWidget {...obj} key={obj.name} />
         ))}
       </TechWidgetContainer>
     </ModuleContainer>

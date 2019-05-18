@@ -1,15 +1,17 @@
-const express = require('express');
-const path = require('path');
+import path from 'path';
+import express from 'express';
+import rootRouter from './routes';
 
 const app = express();
 
-app.use((req, res, next) => {
-  console.log('req.url:', req.url);
-  return next();
-});
+// app.use((req, res, next) => {
+//   console.log('req.url:', req.url);
+//   return next();
+// });
+
 app.use(express.static(path.resolve(__dirname, '../public')));
 
-app.use(require('./routes'));
+app.use(rootRouter);
 
 const port = process.env.PORT || 3000;
 
@@ -19,4 +21,4 @@ const server = app.listen(port, () =>
 
 if (process.env.NODE_ENV === 'test') server.close();
 
-module.exports = { server };
+export default server;

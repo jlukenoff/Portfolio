@@ -258,10 +258,10 @@ export const RightTextBlock = styled(LeftTextBlock)`
 `;
 
 export const StyledSvg = styled(ReactSVG)(
-  ({ fillColor }) => `
+  ({ fillcolor }) => `
     height: 37px;
     width: 37px;
-    fill: ${fillColor};
+    fill: ${fillcolor};
     margin-right: 15px;
   `
 );
