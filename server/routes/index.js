@@ -1,16 +1,10 @@
-const express = require('express');
-const path = require('path');
+import express from 'express';
+import clientRouter from './client';
+import STATIC_DIR from '../constants';
 
 const router = express.Router();
 
-const STATIC_DIR = path.resolve(__dirname, '../../public');
+router.use(express.static(STATIC_DIR));
+router.use(clientRouter);
 
-router.use((req, res, next) => {
-  if (req.url.match(/[(/projects)(/tech)(/about)]/)) {
-    return res.sendFile(`${STATIC_DIR}/index.html`);
-  }
-
-  return next();
-});
-
-module.exports = router;
+export default router;

@@ -6,9 +6,11 @@
   "scripts": {
     "start": "node server/index.js",
     "test": "jest",
-    "dev:start": "nodemon --inspect server/index.js",
-    "dev:build": "webpack -w",
-    "build": "webpack -p --progress",
+    "dev:start": "nodemon --inspect public/server.js",
+    "build": "webpack --config server.webpack.config.js -p --progress && webpack -p --progress",
+    "dev:build-server": "webpack --config server.webpack.config.js -w",
+    "build-client": "webpack -p",
+    "dev:client": "webpack -w",
     "docker-compose": "docker run -d -p 8080:3000 -v $(pwd):/src/app --name mern-boilerplate jlukenoff/mern-boilerplate",
     "heroku-postbuild": "webpack -p"
   },
@@ -54,7 +56,8 @@
     "react-svg": "^10.0.2",
     "react-transition-group": "^4.0.1",
     "supertest": "^3.3.0",
-    "webpack-dev-server": "^3.2.1"
+    "webpack-dev-server": "^3.2.1",
+    "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
