@@ -6,7 +6,7 @@ import {
   SubTitleText,
   HorizontalBlock,
   CenteredImage,
-  RightSubTitleText,
+  // RightSubTitleText,
 } from '../Styles/Styles';
 // import PropTypes from 'prop-types';
 
@@ -21,13 +21,13 @@ const Home = () => (
     <ModuleContainer key="home">
       <SubTitleText>Software Engineer</SubTitleText>
       <HorizontalBlock>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex omnis qui
-        necessitatibus laudantium deserunt, tempore ea in quidem, provident
-        voluptas est itaque doloremque sed vero reiciendis fugit amet facere?
-        Tenetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Numquam voluptatem explicabo, blanditiis atque asperiores, voluptatibus
-        commodi eius voluptates molestias adipisci tenetur quos nobis tempora
-        nemo quis ab quibusdam perspiciatis. Reiciendis!
+        I am a passionate and motivated developer skilled in React, Node, and
+        modern Javascript. I have developed, deployed, and scaled many full
+        stack web applications, including this website. Which is currently
+        running on my home network and hosted on a Raspberry Pi.
+        <br />
+        <br />I have a genuine interesting in learning all things tech and am
+        always working on side projects in my spare time.
       </HorizontalBlock>
 
       <SubTitleText style={{ marginBottom: '20px' }}>My Resume</SubTitleText>

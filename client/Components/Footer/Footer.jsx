@@ -25,8 +25,8 @@ const Footer = props => (
     <ContactInfoContainer>
       Contact me:
       <br />
-      <LinkContainer href="mailto:jlukenoff@gmail.com">
-        jlukenoff@gmail.com
+      <LinkContainer href="mailto:john@jlukenoff.com">
+        john@jlukenoff.com
       </LinkContainer>{' '}
       <br />
       <LinkContainer href="tel:4155835388">415.583.5388</LinkContainer>

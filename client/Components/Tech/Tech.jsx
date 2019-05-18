@@ -4,21 +4,22 @@ import {
   ModuleContainer,
   TechWidgetContainer,
   TechWidgetEntry,
-  LogoImage,
   WidgetHeader,
   WidgetBody,
   ToggleArrow,
   NavIcon,
   WidgetDescription,
   SubTitleText,
+  StyledSvg,
 } from '../Styles/Styles';
 
-const TechWidget = ({ name, description, projectList, logoSrc }) => {
+const TechWidget = ({ name, description, projectList, logoSrc, logoColor }) => {
   const [showDescription, toggleDescription] = useState(false);
+  console.log('logoSrc:', logoSrc);
   return (
     <TechWidgetEntry>
       <WidgetHeader>
-        <LogoImage src={logoSrc} />
+        <StyledSvg src={logoSrc} fillColor={logoColor} />
         {name}
         <ToggleArrow
           onClick={() => toggleDescription(!showDescription)}
@@ -55,12 +56,13 @@ const sampleTechPayload = [
       'Shopr',
       'PiHome',
     ],
-    logoSrc: '/react.png',
+    logoSrc: '/img/react.svg',
+    logoColor: '#61DAFB',
   },
   {
-    name: 'React',
+    name: 'Jest',
     description:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet consectetur fuga numquam sint eius deleniti officiis corrupti assumenda sed impedit distinctio sunt ducimus placeat, molestiae aliquid quod exercitationem nulla. Repellat.',
+      'Jest is my go-to framework for testing. I always ensure that the modules I build are well tested with an aim for 90%+ coverage.',
     projectList: [
       'Narvar Internal Tooling',
       'Vacation.ly',
@@ -68,23 +70,11 @@ const sampleTechPayload = [
       'Shopr',
       'PiHome',
     ],
-    logoSrc: '/react.png',
+    logoSrc: '/img/jest.svg',
+    logoColor: '#C21325',
   },
   {
-    name: 'React',
-    description:
-      "I've used react in many project to create dynamic and powerful user interfaces",
-    projectList: [
-      'Narvar Internal Tooling',
-      'Vacation.ly',
-      'My Portfolio (this website!)',
-      'Shopr',
-      'PiHome',
-    ],
-    logoSrc: '/react.png',
-  },
-  {
-    name: 'React',
+    name: 'CSS3',
     description:
       "I've used react in many project to create dynamic and powerful user interfaces",
     projectList: [
@@ -94,10 +84,11 @@ const sampleTechPayload = [
       'Shopr',
       'PiHome',
     ],
-    logoSrc: '/react.png',
+    logoSrc: '/img/css3.svg',
+    logoColor: '#1572B6',
   },
   {
-    name: 'React',
+    name: 'Docker',
     description:
       "I've used react in many project to create dynamic and powerful user interfaces",
     projectList: [
@@ -107,10 +98,11 @@ const sampleTechPayload = [
       'Shopr',
       'PiHome',
     ],
-    logoSrc: '/react.png',
+    logoSrc: '/img/docker.svg',
+    logoColor: '#1488C6',
   },
   {
-    name: 'React',
+    name: 'Git',
     description:
       "I've used react in many project to create dynamic and powerful user interfaces",
     projectList: [
@@ -120,10 +112,11 @@ const sampleTechPayload = [
       'Shopr',
       'PiHome',
     ],
-    logoSrc: '/react.png',
+    logoSrc: '/img/github.svg',
+    logoColor: '#181717',
   },
   {
-    name: 'React',
+    name: 'HTML5',
     description:
       "I've used react in many project to create dynamic and powerful user interfaces",
     projectList: [
@@ -133,10 +126,11 @@ const sampleTechPayload = [
       'Shopr',
       'PiHome',
     ],
-    logoSrc: '/react.png',
+    logoSrc: '/img/html5.svg',
+    logoColor: '#E34F26',
   },
   {
-    name: 'React',
+    name: 'Linux',
     description:
       "I've used react in many project to create dynamic and powerful user interfaces",
     projectList: [
@@ -146,7 +140,22 @@ const sampleTechPayload = [
       'Shopr',
       'PiHome',
     ],
-    logoSrc: '/react.png',
+    logoSrc: '/img/linux.svg',
+    logoColor: '#FCC624',
+  },
+  {
+    name: 'MongoDB',
+    description:
+      "I've used react in many project to create dynamic and powerful user interfaces",
+    projectList: [
+      'Narvar Internal Tooling',
+      'Vacation.ly',
+      'My Portfolio (this website!)',
+      'Shopr',
+      'PiHome',
+    ],
+    logoSrc: '/img/mongodb.svg',
+    logoColor: '#47A248',
   },
 ];
 

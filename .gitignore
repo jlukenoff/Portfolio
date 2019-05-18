@@ -3,8 +3,8 @@ bundle.**
 **.bundle.**
 coverage
 .DS_Store
-**.pdf
-**.svg
-**.jpg
-**.png
 /public/**.js
+**.pdf
+img/**
+**.svg
+**.ico

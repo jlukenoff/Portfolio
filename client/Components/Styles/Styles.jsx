@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { NavLink, Link } from 'react-router-dom';
+import ReactSVG from 'react-svg';
 // import { Document } from 'react-pdf';
 
 export const RootContainer = styled.div`
@@ -108,7 +109,7 @@ export const PageTitle = styled(Link)`
 
 export const SubTitleText = styled.h2`
   font-size: 3em;
-  margin: 0 10% 150px;
+  margin: 0 10% 50px;
   font-weight: 700;
 `;
 
@@ -127,7 +128,8 @@ export const HorizontalBlock = styled.div`
   flex-flow: row;
   justify-content: flex-start;
   letter-spacing: 0.8px;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
+  text-align: center;
 `;
 
 export const StyledFooter = styled.footer`
@@ -254,3 +256,12 @@ export const RightTextBlock = styled(LeftTextBlock)`
   justify-self: flex-end;
   margin-left: auto;
 `;
+
+export const StyledSvg = styled(ReactSVG)(
+  ({ fillColor }) => `
+    height: 37px;
+    width: 37px;
+    fill: ${fillColor};
+    margin-right: 15px;
+  `
+);

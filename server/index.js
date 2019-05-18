@@ -3,6 +3,10 @@ const path = require('path');
 
 const app = express();
 
+app.use((req, res, next) => {
+  console.log('req.url:', req.url);
+  return next();
+});
 app.use(express.static(path.resolve(__dirname, '../public')));
 
 app.use(require('./routes'));
