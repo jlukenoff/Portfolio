@@ -57,6 +57,7 @@
     "react-router-dom": "^5.0.0",
     "react-svg": "^10.0.2",
     "react-transition-group": "^4.0.1",
+    "redis": "^2.8.0",
     "supertest": "^3.3.0",
     "webpack-dev-server": "^3.2.1",
     "webpack-node-externals": "^1.7.2"
