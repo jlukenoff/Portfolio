@@ -22,7 +22,8 @@ const TechWidget = ({ name, description, projectList, logoSrc, logoColor }) => {
         {name}
         <ToggleArrow
           onClick={() => toggleDescription(!showDescription)}
-          type="button">
+          type="button"
+        >
           <NavIcon
             className={`fa fa-chevron-${showDescription ? 'down' : 'left'}`}
             ariaHidden="true"
@@ -163,7 +164,8 @@ const Tech = props => (
     transitionAppear
     transitionAppearTimeout={500}
     transitionEnter={false}
-    transitionLeave={false}>
+    transitionLeave={false}
+  >
     <ModuleContainer key="tech">
       <SubTitleText>Tech Experience</SubTitleText>
       <TechWidgetContainer>

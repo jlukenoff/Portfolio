@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  portfolio:
+    build: ./
+    container_name: portfolio
+    volumes:
+      - ./:/src/app
+    depends_on:
+      - redis
+    ports:
+      - '3000:3000'
+    environment:
+      - REDIS_URL=redis://redis_cache
+
+  redis:
+    image: redis:latest
+    container_name: redis_cache
+    expose:
+      - 6379
