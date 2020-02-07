@@ -1,13 +1,11 @@
 import path from 'path';
 import express from 'express';
+import { config } from 'dotenv';
 import rootRouter from './routes';
 
-const app = express();
+config();
 
-// app.use((req, res, next) => {
-//   console.log('req.url:', req.url);
-//   return next();
-// });
+const app = express();
 
 app.use(express.static(path.resolve(__dirname, '../public')));
 

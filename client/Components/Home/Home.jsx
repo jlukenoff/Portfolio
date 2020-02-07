@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactCSSTransitionsGroup from 'react-addons-css-transition-group';
-// import { Page } from 'react-pdf';
+import { Page } from 'react-pdf';
 import {
   ModuleContainer,
   SubTitleText,
   HorizontalBlock,
   CenteredImage,
   // RightSubTitleText,
+  StyledDocument,
 } from '../Styles/Styles';
 // import PropTypes from 'prop-types';
 
@@ -37,8 +38,8 @@ const Home = () => (
       />
       {/* TODO: make this a modal to reduce bundle size */}
       {/* <StyledDocument file="/resume.pdf">
-      <Page pageNumber={1} />
-    </StyledDocument> */}
+        <Page pageNumber={1} />
+      </StyledDocument> */}
     </ModuleContainer>
   </ReactCSSTransitionsGroup>
 );

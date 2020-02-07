@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { NavLink, Link } from 'react-router-dom';
 import ReactSVG from 'react-svg';
-// import { Document } from 'react-pdf';
+import { Document } from 'react-pdf';
 
 export const RootContainer = styled.div`
   @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:400,700,900');
@@ -25,7 +25,7 @@ export const BackgroundImageContainer = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-  background: url(https://s3-us-west-1.amazonaws.com/johnportfolio/bence-balla-schottner-1570185-unsplash.jpg)
+  background: url(https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)
     left top / cover no-repeat;
   z-index: -2;
 
@@ -164,18 +164,18 @@ export const ContactInfoContainer = styled.div`
   color: #fff;
 `;
 
-// export const StyledDocument = styled(Document)`
-//   width: 80%;
-//   height: auto;
-//   margin: 50px auto;
-//   overflow-y: scroll;
+export const StyledDocument = styled(Document)`
+  width: 80%;
+  height: auto;
+  margin: 50px auto;
+  overflow-y: scroll;
 
-//   canvas {
-//     margin: auto;
-//     height: auto !important;
-//     width: 100% !important;
-// }
-// `;
+  canvas {
+    margin: auto;
+    height: auto !important;
+    width: 100% !important;
+  }
+`;
 
 export const CenteredImage = styled.img`
   width: 70%;

@@ -8,3 +8,4 @@ public/**
 img/**
 **.svg
 **.ico
+.env
