@@ -15,7 +15,7 @@ module.exports = {
   devtool: 'source-map',
   mode: isProd ? 'production' : 'development',
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   devServer: {
     contentBase: path.join(__dirname, 'public'),
@@ -32,13 +32,24 @@ module.exports = {
   //     ]
   //   : [],
   module: {
-    rules: [{
-      test: /.jsx?/,
-      loader: 'babel-loader',
-      exclude: /node_modules/,
-      query: {
-        presets: ['env', 'react', 'airbnb'],
+    rules: [
+      {
+        test: /.jsx?/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['env', 'react', 'airbnb'],
+        },
       },
-    }, ],
+      {
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'ts-loader',
+          },
+        ],
+      },
+    ],
   },
 };

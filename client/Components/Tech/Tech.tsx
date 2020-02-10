@@ -1,5 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, ReactElement } from 'react';
 import ReactCSSTransitionsGroup from 'react-addons-css-transition-group';
+import {
+  ExpansionPanel,
+  ExpansionPanelDetails,
+  ExpansionPanelSummary,
+  Typography,
+} from '@material-ui/core';
+import { ExpandMore } from '@material-ui/icons';
 import {
   ModuleContainer,
   TechWidgetContainer,
@@ -13,37 +20,15 @@ import {
   StyledSvg,
 } from '../Styles/Styles';
 
-const TechWidget = ({ name, description, projectList, logoSrc, logoColor }) => {
-  const [showDescription, toggleDescription] = useState(false);
-  return (
-    <TechWidgetEntry>
-      <WidgetHeader>
-        <StyledSvg src={logoSrc} fillcolor={logoColor} />
-        {name}
-        <ToggleArrow
-          onClick={() => toggleDescription(!showDescription)}
-          type="button"
-        >
-          <NavIcon
-            className={`fa fa-chevron-${showDescription ? 'down' : 'left'}`}
-            ariaHidden="true"
-          />
-        </ToggleArrow>
-      </WidgetHeader>
-      {showDescription && (
-        <WidgetBody>
-          <WidgetDescription>
-            {`\t${description}`}
-            <br />
-            <h3>Projects:</h3> {projectList.join(', ')}
-          </WidgetDescription>
-        </WidgetBody>
-      )}
-    </TechWidgetEntry>
-  );
-};
+export interface WidgetProps {
+  name: string;
+  description: string;
+  projectList: string[];
+  logoSrc: string;
+  logoColor: string;
+}
 
-const sampleTechPayload = [
+const sampleTechPayload: WidgetProps[] = [
   {
     name: 'React',
     description:
@@ -158,7 +143,33 @@ const sampleTechPayload = [
   },
 ];
 
-const Tech = props => (
+const TechWidget = ({
+  name,
+  description,
+  projectList,
+  logoSrc,
+  logoColor,
+}: WidgetProps): ReactElement => {
+  const [showDescription, toggleDescription] = useState(false);
+  return (
+    <ExpansionPanel>
+      <ExpansionPanelSummary
+        expandIcon={<ExpandMore />}
+        style={{ minWidth: '300px', color: '#5a5a5a' }}
+      >
+        <StyledSvg src={logoSrc} fillcolor={logoColor} />
+        <Typography>{name}</Typography>
+      </ExpansionPanelSummary>
+      <ExpansionPanelDetails>
+        <h3>Projects:</h3> {projectList.join(', ')}
+        <br />
+        <Typography>{`\t${description}`}</Typography>
+      </ExpansionPanelDetails>
+    </ExpansionPanel>
+  );
+};
+
+const Tech = () => (
   <ReactCSSTransitionsGroup
     transitionName="module"
     transitionAppear
@@ -177,7 +188,18 @@ const Tech = props => (
   </ReactCSSTransitionsGroup>
 );
 
+export default Tech;
+
 // Tech.propTypes = {
 // };
 
-export default Tech;
+// Old toggle arrow
+/* <ToggleArrow
+          onClick={() => toggleDescription(!showDescription)}
+          type="button"
+        >
+          <NavIcon
+            className={`fa fa-chevron-${showDescription ? 'down' : 'left'}`}
+            ariaHidden="true"
+          />
+        </ToggleArrow> */
