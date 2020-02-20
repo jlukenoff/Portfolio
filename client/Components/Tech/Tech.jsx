@@ -19,16 +19,16 @@ import {
   SubTitleText,
   StyledSvg,
 } from '../Styles/Styles';
-
+/*
 export interface WidgetProps {
   name: string;
   description: string;
   projectList: string[];
   logoSrc: string;
   logoColor: string;
-}
+} */
 
-const sampleTechPayload: WidgetProps[] = [
+const sampleTechPayload /* : WidgetProps[] */ = [
   {
     name: 'React',
     description:
@@ -143,13 +143,9 @@ const sampleTechPayload: WidgetProps[] = [
   },
 ];
 
-const TechWidget = ({
-  name,
-  description,
-  projectList,
-  logoSrc,
-  logoColor,
-}: WidgetProps): ReactElement => {
+const TechWidget = (
+  { name, description, projectList, logoSrc, logoColor } /* : WidgetProps */
+) /* : ReactElement */ => {
   const [showDescription, toggleDescription] = useState(false);
   return (
     <ExpansionPanel>
@@ -160,7 +156,7 @@ const TechWidget = ({
         <StyledSvg src={logoSrc} fillcolor={logoColor} />
         <Typography>{name}</Typography>
       </ExpansionPanelSummary>
-      <ExpansionPanelDetails>
+      <ExpansionPanelDetails styles={{ flexDirection: 'column' }}>
         <h3>Projects:</h3> {projectList.join(', ')}
         <br />
         <Typography>{`\t${description}`}</Typography>

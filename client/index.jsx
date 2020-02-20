@@ -1,11 +1,11 @@
 import React from 'react';
-import { hydrate, render } from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { render } from 'react-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import App from './Components/App/App';
 
 render(
   <Router>
-    <App />
+    <Route path="/" render={props => <App {...props} />} />
   </Router>,
   document.getElementById('app')
 );

@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { NavLink, Link } from 'react-router-dom';
 import ReactSVG from 'react-svg';
 import { Document } from 'react-pdf';
+import { Paper, Link as LinkComponent } from '@material-ui/core';
 
 export const RootContainer = styled.div`
   @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:400,700,900');
@@ -118,7 +119,7 @@ export const RightSubTitleText = styled(SubTitleText)`
   margin-left: auto;
 `;
 
-export const HorizontalBlock = styled.div`
+export const HorizontalBlock = styled(Paper)`
   background-color: #fff;
   padding: 30px 10%;
   font-family: Montserrat;
@@ -265,3 +266,15 @@ export const StyledSvg = styled(ReactSVG)(
     margin-right: 15px;
   `
 );
+
+export const StyledLink = styled(LinkComponent)`
+  padding: 10px 100px !important;
+  width: 300px;
+  white-space: nowrap;
+  margin: 0 auto !important;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+`;

@@ -22,6 +22,8 @@ class App extends Component {
 
   render() {
     const { props, state } = this;
+    const { location } = state;
+
     return (
       <RootContainer>
         <Global
@@ -36,7 +38,7 @@ class App extends Component {
         <BackgroundImageContainer />
         <Gradient />
         <Nav {...state} {...props} />
-        <Switch>
+        <Switch location={location}>
           <Route
             path="/projects"
             render={routeProps => <Projects {...props} {...routeProps} />}
