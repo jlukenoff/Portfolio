@@ -23,10 +23,11 @@ const Home = () => (
     <ModuleContainer key="home">
       <SubTitleText>Software Engineer</SubTitleText>
       <HorizontalBlock>
-        I am a passionate and motivated developer skilled in React, Node, and
-        modern Javascript. I have developed, deployed, and scaled many full
-        stack web applications, including this website. Which is currently
-        running on my home network and hosted on a Raspberry Pi.
+        &tab; I am a passionate and motivated developer skilled in React,
+        Node.js, SQL, NoSQL and modern Javascript. I have developed, deployed,
+        and scaled many full stack web applications, including this website.
+        Which is currently running on my home network and hosted on GCP and load
+        balancing between GCP and a Raspberry Pi at home to save money.
         <br />
         <br />I have a genuine interesting in learning all things tech and am
         always working on side projects in my spare time.

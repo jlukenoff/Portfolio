@@ -5,7 +5,7 @@ import App from './Components/App/App';
 
 render(
   <Router>
-    <Route path="/" render={props => <App {...props} />} />
+    <Route path="/" render={({ location }) => <App location={location} />} />
   </Router>,
   document.getElementById('app')
 );

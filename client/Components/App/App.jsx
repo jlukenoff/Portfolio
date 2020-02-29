@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Global, css } from '@emotion/core';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect, useRouteMatch } from 'react-router-dom';
 import Nav from '../Nav/Nav';
 import Home from '../Home/Home';
 import Tech from '../Tech/Tech';
@@ -12,51 +12,44 @@ import {
   BackgroundImageContainer,
 } from '../Styles/Styles';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      ...props,
-    };
-  }
-
-  render() {
-    const { props, state } = this;
-    const { location } = state;
-
-    return (
-      <RootContainer>
-        <Global
-          styles={css`
-            body,
-            #app {
-              min-height: 100%;
-              margin: 0;
-            }
-          `}
+const App = props => {
+  const { path } = useRouteMatch();
+  const { location } = props;
+  return (
+    <RootContainer>
+      <Global
+        styles={css`
+          body,
+          #app {
+            min-height: 100%;
+            margin: 0;
+          }
+        `}
+      />
+      <BackgroundImageContainer />
+      <Gradient />
+      <Nav {...props} />
+      <Route path={`${path}/`} exact render={() => <Redirect to="/about" />} />
+      <Switch location={location}>
+        <Route
+          path={`${path}/projects`}
+          exact
+          render={routeProps => <Projects {...props} {...routeProps} />}
         />
-        <BackgroundImageContainer />
-        <Gradient />
-        <Nav {...state} {...props} />
-        <Switch location={location}>
-          <Route
-            path="/projects"
-            render={routeProps => <Projects {...props} {...routeProps} />}
-          />
-          <Route
-            path="/tech"
-            render={routeProps => <Tech {...props} {...routeProps} />}
-          />
-          <Route
-            path="/"
-            render={routeProps => <Home {...props} {...routeProps} />}
-          />
-        </Switch>
-        <Footer />
-      </RootContainer>
-    );
-  }
-}
+        <Route
+          path={`${path}/tech`}
+          exact
+          render={routeProps => <Tech {...props} {...routeProps} />}
+        />
+        <Route
+          path={`${path}/`}
+          render={routeProps => <Home {...props} {...routeProps} />}
+        />
+      </Switch>
+      <Footer />
+    </RootContainer>
+  );
+};
 
 // App.propTypes = {
 // };

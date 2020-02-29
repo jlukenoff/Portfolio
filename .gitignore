@@ -10,3 +10,4 @@ img/**
 **.ico
 .env
 *.log
+.firebase/*

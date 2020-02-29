@@ -59,7 +59,7 @@
     "react-dom": "^16.8.6",
     "react-pdf": "^4.1.0",
     "react-router": "^5.0.0",
-    "react-router-dom": "^5.0.0",
+    "react-router-dom": "^5.1.2",
     "react-svg": "^10.0.2",
     "react-transition-group": "^4.0.1",
     "redis": "^2.8.0",
