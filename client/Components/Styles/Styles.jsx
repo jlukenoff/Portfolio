@@ -1,10 +1,10 @@
-import styled from '@emotion/styled';
-import { NavLink, Link } from 'react-router-dom';
-import ReactSVG from 'react-svg';
-import { Document } from 'react-pdf';
+import styled from "@emotion/styled";
+import { NavLink, Link } from "react-router-dom";
+import ReactSVG from "react-svg";
+// import { Document } from "react-pdf";
 
 export const RootContainer = styled.div`
-  @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:400,700,900');
+  @import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway:400,700,900");
 
   font-family: Raleway;
   width: 100%;
@@ -19,17 +19,13 @@ export const RootContainer = styled.div`
   }
 `;
 
-export const BackgroundImageContainer = styled.div`
+export const BackgroundImageContainer = styled.img`
   position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background: url(https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)
-    left top / cover no-repeat;
   z-index: -2;
-
-  background-attachment: fixed;
 `;
 
 export const Gradient = styled.div`
@@ -265,3 +261,9 @@ export const StyledSvg = styled(ReactSVG)(
     margin-right: 15px;
   `
 );
+
+export const DownloadButton = styled.a`
+  text-transform: none;
+  display: block;
+  padding: ;
+`;

@@ -1,14 +1,15 @@
-import React from 'react';
-import ReactCSSTransitionsGroup from 'react-addons-css-transition-group';
-import { Page } from 'react-pdf';
+import React from "react";
+import ReactCSSTransitionsGroup from "react-addons-css-transition-group";
+import { Button } from "@material-ui/core";
 import {
   ModuleContainer,
   SubTitleText,
   HorizontalBlock,
   CenteredImage,
+  DownloadButton,
   // RightSubTitleText,
-  StyledDocument,
-} from '../Styles/Styles';
+  StyledDocument
+} from "../Styles/Styles";
 // import PropTypes from 'prop-types';
 
 const Home = () => (
@@ -31,15 +32,14 @@ const Home = () => (
         always working on side projects in my spare time.
       </HorizontalBlock>
 
-      <SubTitleText style={{ marginBottom: '20px' }}>My Resume</SubTitleText>
-      <CenteredImage
-        src="https://s3-us-west-1.amazonaws.com/johnportfolio/resume.png"
-        alt="Resume"
-      />
-      {/* TODO: make this a modal to reduce bundle size */}
-      {/* <StyledDocument file="/resume.pdf">
-        <Page pageNumber={1} />
-      </StyledDocument> */}
+      <SubTitleText style={{ marginBottom: "20px" }}>My Resume</SubTitleText>
+      <Button
+        component={DownloadButton}
+        href="https://s3-us-west-1.amazonaws.com/johnportfolio/resume.pdf"
+        ariaLabel="Click to download pdf"
+      >
+        My Resume
+      </Button>
     </ModuleContainer>
   </ReactCSSTransitionsGroup>
 );

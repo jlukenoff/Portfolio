@@ -9,7 +9,8 @@ const isProd = process.env.NODE_ENV === 'production';
 module.exports = {
   entry: ENTRY_POINT,
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
     path: OUTPUT_DIR,
   },
   devtool: 'source-map',

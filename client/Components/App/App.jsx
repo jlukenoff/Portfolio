@@ -1,27 +1,38 @@
-import React, { Component } from 'react';
-import { Global, css } from '@emotion/core';
-import { Switch, Route } from 'react-router-dom';
-import Nav from '../Nav/Nav';
-import Home from '../Home/Home';
-import Tech from '../Tech/Tech';
-import Footer from '../Footer/Footer';
-import Projects from '../Projects/Projects';
+import React, { Component, lazy, Suspense } from "react";
+import { Global, css } from "@emotion/core";
+import { Switch, Route } from "react-router-dom";
+import Nav from "../Nav/Nav";
+import Home from "../Home/Home";
+import Footer from "../Footer/Footer";
+// import Tech from "../Tech/Tech";
+// import Projects from "../Projects/Projects";
+
+const Tech = lazy(() => import("../Tech/Tech"));
+const Projects = lazy(() => import("../Projects/Projects"));
+// const Footer = lazy(() => import("../Footer/Footer"));
 import {
   RootContainer,
   Gradient,
-  BackgroundImageContainer,
-} from '../Styles/Styles';
+  BackgroundImageContainer
+} from "../Styles/Styles";
+
+const Loading = Comp => props => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <Comp {...props} />
+  </Suspense>
+);
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ...props,
+      ...props
     };
   }
 
   render() {
     const { props, state } = this;
+    const { img: Image } = props;
     return (
       <RootContainer>
         <Global
@@ -33,18 +44,12 @@ class App extends Component {
             }
           `}
         />
-        <BackgroundImageContainer />
+        <Image />
         <Gradient />
         <Nav {...state} {...props} />
         <Switch>
-          <Route
-            path="/projects"
-            render={routeProps => <Projects {...props} {...routeProps} />}
-          />
-          <Route
-            path="/tech"
-            render={routeProps => <Tech {...props} {...routeProps} />}
-          />
+          <Route path="/projects" render={Loading(Projects)} />
+          <Route path="/tech" render={Loading(Tech)} />
           <Route
             path="/"
             render={routeProps => <Home {...props} {...routeProps} />}
