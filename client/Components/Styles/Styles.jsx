@@ -1,7 +1,14 @@
 import styled from "@emotion/styled";
 import { NavLink, Link } from "react-router-dom";
 import ReactSVG from "react-svg";
-// import { Document } from "react-pdf";
+import { createMuiTheme } from "@material-ui/core";
+
+export const theme = createMuiTheme({
+  palette: {
+    primary: { main: "#C2C9D4" },
+    secondary: { main: "#0D1B1E" }
+  }
+});
 
 export const RootContainer = styled.div`
   @import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway:400,700,900");
@@ -40,7 +47,7 @@ export const Gradient = styled.div`
 `;
 export const NavContainer = styled.div`
   width: 90%;
-  margin: 10px auto 100px;
+  margin: auto 100px;
   height: 50px;
   display: flex;
   justify-content: flex-end;
@@ -267,3 +274,10 @@ export const DownloadButton = styled.a`
   display: block;
   padding: ;
 `;
+
+export const Img = styled.img(
+  props => `
+  background-image: url(${props.image});
+
+`
+);

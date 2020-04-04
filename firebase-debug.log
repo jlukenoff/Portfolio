@@ -1,0 +1,22 @@
+[debug] [2020-04-04T06:36:21.485Z] ----------------------------------------------------------------------
+[debug] [2020-04-04T06:36:21.487Z] Command:       /Users/dev/.nvm/versions/node/v12.16.1/bin/node /Users/dev/.nvm/versions/node/v12.16.1/bin/firebase serve --only hosting
+[debug] [2020-04-04T06:36:21.488Z] CLI Version:   8.0.0
+[debug] [2020-04-04T06:36:21.488Z] Platform:      darwin
+[debug] [2020-04-04T06:36:21.488Z] Node Version:  v12.16.1
+[debug] [2020-04-04T06:36:21.489Z] Time:          Fri Apr 03 2020 23:36:21 GMT-0700 (Pacific Daylight Time)
+[debug] [2020-04-04T06:36:21.489Z] ----------------------------------------------------------------------
+[debug] [2020-04-04T06:36:21.489Z] 
+[debug] [2020-04-04T06:36:21.498Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-04T06:36:21.499Z] > authorizing via signed-in user
+[debug] [2020-04-04T06:36:21.499Z] [iam] checking project john-lukenoff-portfolio for permissions ["firebase.projects.get"]
+[debug] [2020-04-04T06:36:21.502Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/john-lukenoff-portfolio:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-04-04T06:36:21.891Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 04 Apr 2020 06:36:21 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=218","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-04T06:36:21.893Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/john-lukenoff-portfolio  
+ 
+[debug] [2020-04-04T06:36:22.139Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 04 Apr 2020 06:36:22 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-04T06:36:22.141Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/john-lukenoff-portfolio/webApps/-/config  
+ 
+[debug] [2020-04-04T06:36:22.791Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 04 Apr 2020 06:36:22 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting: Serving hosting files from: ./public
+[info] ✔  hosting: Local server: http://localhost:5000

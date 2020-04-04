@@ -1,9 +1,7 @@
 node_modules
-bundle.**
-**.bundle.**
 coverage
 .DS_Store
-public/**
+public/*.js*
 **.pdf
 img/**
 **.svg
