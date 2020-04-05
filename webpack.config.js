@@ -1,4 +1,6 @@
 const path = require("path");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 
 const ENTRY_POINT = path.resolve(__dirname, "client/index.jsx");
 
@@ -24,14 +26,13 @@ module.exports = {
     compress: true,
     port: 8080,
   },
-  // plugins: isProd
-  //   ? [
-  //       new CompressionPlugin({
-  //         test: /\.js(\?.*)?$/i,
-  //       }),
-  //       new BundleAnalyzerPlugin(),
-  //     ]
-  //   : [],
+  plugins: isProd
+    ? [
+        // new CompressionPlugin({
+        //   test: /\.js(\?.*)?$/i,
+        // }),
+      ]
+    : [new BundleAnalyzerPlugin({})],
   module: {
     rules: [
       {

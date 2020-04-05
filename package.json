@@ -9,9 +9,9 @@
     "dev:start": "nodemon --inspect public/server.js",
     "build": "webpack --config server.webpack.config.js -p --progress && webpack -p --progress",
     "dev:build-server": "webpack --config server.webpack.config.js -w",
-    "build-client": "webpack -p",
+    "build-client": "NODE_ENV=production webpack -p",
     "dev:build-client": "webpack-dev-server",
-    "dev:build": "webpack -w",
+    "dev:build": "NODE_ENV=development webpack -w",
     "docker-compose": "docker run -d -p 8080:3000 -v $(pwd):/src/app --name mern-boilerplate jlukenoff/mern-boilerplate",
     "heroku-postbuild": "webpack -p",
     "firebase-deploy": "webpack -p && firebase deploy --only hosting"
@@ -59,16 +59,14 @@
     "react": "^16.8.6",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.8.6",
+    "react-pdf": "^4.1.0",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-transition-group": "^4.0.1",
     "supertest": "^3.3.0",
-    "webpack-dev-server": "^3.2.1",
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
-    "jest": "^24.5.0",
-    "nodemon": "^1.18.10",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -78,9 +76,12 @@
     "babel-preset-stage-2": "^6.24.1",
     "compression-webpack-plugin": "^2.0.0",
     "css-loader": "^1.0.1",
+    "jest": "^24.5.0",
+    "nodemon": "^1.18.10",
     "style-loader": "^0.23.1",
     "webpack": "^4.41.6",
-    "webpack-bundle-analyzer": "^3.3.2",
-    "webpack-cli": "^3.1.2"
+    "webpack-bundle-analyzer": "^3.6.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   }
 }

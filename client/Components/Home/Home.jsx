@@ -24,7 +24,9 @@ const useStyles = makeStyles({
     padding: "20px",
   },
   paper: {
-    backgroundColor: "rgba(253, 253, 253, 0.8)",
+    // backgroundColor: "rgba(253, 253, 253, 0.8)",
+    backgroundColor: "#FCFCFC",
+    // color: "#fff",
   },
 });
 
@@ -43,7 +45,7 @@ const Home = () => {
         <SubTitleText style={{ marginTop: "50px" }}>
           Software Engineer
         </SubTitleText>
-        <Paper className={classes.paper} color="primary">
+        <Paper className={classes.paper} color="secondary">
           <Container maxWidth="md" className={classes.innerContent}>
             <Typography variant="body1">
               My aptitude for problem-solving and technology has driven my

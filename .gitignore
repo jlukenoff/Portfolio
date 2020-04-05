@@ -5,5 +5,7 @@ public/*.js*
 **.pdf
 img/**
 **.svg
-**.ico
+# **.ico
 .env
+stats.json
+.firebase/

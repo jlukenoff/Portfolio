@@ -1,7 +1,7 @@
 import React from "react";
 import ReactCSSTransitionsGroup from "react-addons-css-transition-group";
 import { ModuleContainer } from "../Styles/Styles";
-import { ExpandMore } from "@material-ui/icons";
+import ExpandMore from "@material-ui/icons/ExpandMore";
 import {
   ExpansionPanel,
   ExpansionPanelSummary,
@@ -180,7 +180,7 @@ const Tech = (props) => {
       <ModuleContainer>
         <Container className={classes.panelsContainer}>
           <Typography variant="h2" style={{ padding: "20px 0" }}>
-            Testing, Tooling, and Deployment
+            Testing, Tooling, Deployment
           </Typography>
           {[
             {

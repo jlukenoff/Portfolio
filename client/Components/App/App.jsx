@@ -13,14 +13,14 @@ import {
   Toolbar,
   useScrollTrigger,
   Container,
-  makeStyles,
-  ThemeProvider,
   Tab,
   Tabs,
 } from "@material-ui/core";
 
+import { makeStyles } from "@material-ui/core/styles";
 const Tech = lazy(() => import("../Tech/Tech"));
 const Projects = lazy(() => import("../Projects/Projects"));
+const Resume = lazy(() => import("../Resume/Resume"));
 
 import {
   RootContainer,
@@ -37,6 +37,14 @@ const useStyles = makeStyles({
   },
   toolbar: {
     minHeight: "60px",
+    justifyContent: "space-between",
+  },
+  mainLink: {
+    color: "#fff ",
+    textDecoration: "none",
+  },
+  tab: {
+    minWidth: "100px",
   },
 });
 
@@ -68,7 +76,10 @@ const App = (props) => {
 
   new Promise((resolve, reject) => {
     const src =
-      "https://images.unsplash.com/photo-1577412647305-991150c7d163?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80";
+      // computer open on desk
+      "https://images.unsplash.com/photo-1508830524289-0adcbe822b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60";
+    // office
+    // "https://images.unsplash.com/photo-1577412647305-991150c7d163?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80";
 
     const img = new Image();
     img.onload = () => resolve(src);
@@ -98,18 +109,26 @@ const App = (props) => {
       <HideOnScroll {...props}>
         <AppBar color="primary" elevation={1}>
           <Toolbar className={classes.toolbar}>
-            <PageTitle to="/about">John Lukenoff</PageTitle>
+            <Typography
+              component={Link}
+              to="/about"
+              variant="h4"
+              className={classes.mainLink}
+            >
+              John Lukenoff
+            </Typography>
             <Tabs
               value={
                 location.pathname ? location.pathname.split("/")[1] : "about"
               }
             >
-              {["about", "projects", "tech"].map((path) => (
+              {["about", "projects", "tech", "resume"].map((path) => (
                 <Tab
                   component={Link}
                   key={path}
                   to={path}
                   value={path}
+                  className={classes.tab}
                   label={`${path[0].toUpperCase()}${path.slice(1)}`}
                 />
               ))}
@@ -125,6 +144,7 @@ const App = (props) => {
           />
           <Route path="/projects" render={Loading(Projects)} />
           <Route path="/tech" render={Loading(Tech)} />
+          <Route path="/resume" render={Loading(Resume)} />
           <Route
             render={() => <Redirect to={{ pathname: "/about" }} />}
             path="/"

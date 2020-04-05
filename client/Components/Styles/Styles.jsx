@@ -1,16 +1,20 @@
 import styled from "@emotion/styled";
 import { NavLink, Link } from "react-router-dom";
-import ReactSVG from "react-svg";
+// import ReactSVG from "react-svg";
 import { createMuiTheme } from "@material-ui/core";
 
 export const theme = createMuiTheme({
   palette: {
-    primary: { main: "#C2C9D4" },
-    secondary: { main: "#0D1B1E" },
+    primary: { main: "#173953", contrastText: "#fff" },
+    secondary: { main: "#759FBC" },
+    background: { default: "CEDBDF" },
   },
   typography: {
     h6: {
       fontWeight: "700",
+    },
+    h4: {
+      fontWeight: "200",
     },
   },
 });
@@ -266,14 +270,14 @@ export const RightTextBlock = styled(LeftTextBlock)`
   margin-left: auto;
 `;
 
-export const StyledSvg = styled(ReactSVG)(
-  ({ fillcolor }) => `
-    height: 37px;
-    width: 37px;
-    fill: ${fillcolor};
-    margin-right: 15px;
-  `
-);
+// export const StyledSvg = styled(ReactSVG)(
+//   ({ fillcolor }) => `
+//     height: 37px;
+//     width: 37px;
+//     fill: ${fillcolor};
+//     margin-right: 15px;
+//   `
+// );
 
 export const DownloadButton = styled.a`
   text-transform: none;
