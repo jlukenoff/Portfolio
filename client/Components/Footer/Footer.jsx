@@ -1,39 +1,56 @@
-import React from 'react';
+import React from "react";
 import {
   StyledFooter,
   NavIcon,
   LinkContainer,
   ContactInfoContainer,
-  SocialLinksContainer,
-} from '../Styles/Styles';
+  SocialLinksContainer
+} from "../Styles/Styles";
 
+import { IconButton, makeStyles } from "@material-ui/core";
 // import PropTypes from 'prop-types';
+const useStyles = makeStyles({
+  iconButtons: {
+    height: "35px"
+  }
+});
 
-const Footer = props => (
-  <StyledFooter>
-    <SocialLinksContainer>
-      <LinkContainer href="https://github.com/jlukenoff" target="_blank">
-        <NavIcon className="fab fa-github " />
-      </LinkContainer>
-      <LinkContainer
-        href="https://www.linkedin.com/in/jlukenoff/"
-        target="_blank"
-      >
-        <NavIcon className="fab fa-linkedin " />
-      </LinkContainer>
-    </SocialLinksContainer>
-    <ContactInfoContainer>
-      Contact me:
-      <br />
-      <LinkContainer href="mailto:john@jlukenoff.com">
-        john@jlukenoff.com
-      </LinkContainer>{' '}
-      <br />
-      <LinkContainer href="tel:4155835388">415.583.5388</LinkContainer>
-    </ContactInfoContainer>
-  </StyledFooter>
-);
-
+/**
+ * TODO:
+ * - Add icons from cloud storage,
+ * - Switch to material footer
+ *
+ *
+ */
+const Footer = props => {
+  const classes = useStyles();
+  return (
+    <StyledFooter>
+      <SocialLinksContainer>
+        {[
+          ["https://github.com/jlukenoff", "github.svg"],
+          ["https://linkedin.com/in/jlukenoff", "linkedin.svg"]
+        ].map(([href, imgSrc]) => (
+          <LinkContainer href={href} target="_blank">
+            <img
+              src={`https://storage.cloud.google.com/john-lukenoff-portoflio/static/${imgSrc}`}
+              className={classes.iconButtons}
+            />
+          </LinkContainer>
+        ))}
+      </SocialLinksContainer>
+      <ContactInfoContainer>
+        Contact me:
+        <br />
+        <LinkContainer href="mailto:john@jlukenoff.com">
+          john@jlukenoff.com
+        </LinkContainer>{" "}
+        <br />
+        <LinkContainer href="tel:4155835388">415.583.5388</LinkContainer>
+      </ContactInfoContainer>
+    </StyledFooter>
+  );
+};
 // Footer.propTypes = {
 // };
 

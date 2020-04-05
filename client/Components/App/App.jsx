@@ -16,7 +16,7 @@ import {
   makeStyles,
   ThemeProvider,
   Tab,
-  Tabs
+  Tabs,
 } from "@material-ui/core";
 
 const Tech = lazy(() => import("../Tech/Tech"));
@@ -27,24 +27,27 @@ import {
   Gradient,
   PageTitle,
   StyledNavLink,
-  theme
+  theme,
 } from "../Styles/Styles";
 
 const useStyles = makeStyles({
   appContainer: {
-    paddingTop: "100px"
+    paddingTop: "100px",
+    minHeight: "calc(100% - 100px)",
   },
-  navBar: {}
+  toolbar: {
+    minHeight: "60px",
+  },
 });
 
-const Loading = Comp => props => (
-  <Suspense fallback={<div>Loading...</div>}>
+const Loading = (Comp) => (props) => (
+  <Suspense fallback={<h2 style={{ textAlign: "center" }}>Loading...</h2>}>
     <Comp {...props} />
   </Suspense>
 );
 
-const HideOnScroll = ({ children, window }) => {
-  const trigger = useScrollTrigger({ target: window ? window() : undefined });
+const HideOnScroll = ({ children }) => {
+  const trigger = useScrollTrigger();
 
   return (
     <Slide direction="down" appear={false} in={!trigger}>
@@ -55,10 +58,10 @@ const HideOnScroll = ({ children, window }) => {
 
 HideOnScroll.propTypes = {
   children: PropTypes.element.isRequired,
-  window: PropTypes.func
+  window: PropTypes.func,
 };
 
-const App = props => {
+const App = (props) => {
   const { location = {} } = props;
   const [backgroundImgSrc, setBackgroundImgSrc] = useState();
   const classes = useStyles();
@@ -69,11 +72,11 @@ const App = props => {
 
     const img = new Image();
     img.onload = () => resolve(src);
-    img.onerror = err => reject(err);
+    img.onerror = (err) => reject(err);
     img.src = src;
   })
-    .then(src => setBackgroundImgSrc(src))
-    .catch(err =>
+    .then((src) => setBackgroundImgSrc(src))
+    .catch((err) =>
       console.error(`Error getting background img src: ${err.message}`)
     );
 
@@ -93,15 +96,15 @@ const App = props => {
       <Gradient />
       {/* <Nav {...state} {...props} /> */}
       <HideOnScroll {...props}>
-        <AppBar color="primary">
-          <Toolbar>
+        <AppBar color="primary" elevation={1}>
+          <Toolbar className={classes.toolbar}>
             <PageTitle to="/about">John Lukenoff</PageTitle>
             <Tabs
               value={
                 location.pathname ? location.pathname.split("/")[1] : "about"
               }
             >
-              {["about", "projects", "tech"].map(path => (
+              {["about", "projects", "tech"].map((path) => (
                 <Tab
                   component={Link}
                   key={path}
@@ -118,7 +121,7 @@ const App = props => {
         <Switch location={location}>
           <Route
             path="/about"
-            render={routeProps => <Home {...props} {...routeProps} />}
+            render={(routeProps) => <Home {...props} {...routeProps} />}
           />
           <Route path="/projects" render={Loading(Projects)} />
           <Route path="/tech" render={Loading(Tech)} />

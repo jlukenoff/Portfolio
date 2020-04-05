@@ -1,25 +1,25 @@
-const path = require('path');
+const path = require("path");
 
-const ENTRY_POINT = path.resolve(__dirname, 'client/index.jsx');
+const ENTRY_POINT = path.resolve(__dirname, "client/index.jsx");
 
-const OUTPUT_DIR = path.resolve(__dirname, 'public');
+const OUTPUT_DIR = path.resolve(__dirname, "public");
 
-const isProd = process.env.NODE_ENV === 'production';
+const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
   entry: ENTRY_POINT,
   output: {
-    filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
+    filename: "[name].bundle.js",
+    chunkFilename: "[name].bundle.js",
     path: OUTPUT_DIR,
   },
-  devtool: 'source-map',
-  mode: isProd ? 'production' : 'development',
+  devtool: "source-map",
+  mode: isProd ? "production" : "development",
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: [".js", ".jsx"],
   },
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
+    contentBase: path.join(__dirname, "public"),
     historyApiFallback: true,
     compress: true,
     port: 8080,
@@ -33,13 +33,19 @@ module.exports = {
   //     ]
   //   : [],
   module: {
-    rules: [{
-      test: /.jsx?/,
-      loader: 'babel-loader',
-      exclude: /node_modules/,
-      query: {
-        presets: ['env', 'react', 'airbnb'],
+    rules: [
+      {
+        test: /.jsx?/,
+        loader: "babel-loader",
+        exclude: /node_modules/,
+        query: {
+          presets: ["env", "react", "airbnb"],
+        },
       },
-    }, ],
+      {
+        test: /\.css$/,
+        use: [{ loader: "style-loader" }, { loader: "css-loader" }],
+      },
+    ],
   },
 };

@@ -5,11 +5,13 @@ import App from "./Components/App/App";
 import { theme } from "./Components/Styles/Styles";
 import { ThemeProvider } from "@material-ui/core";
 
+import "normalize.css";
+
 render(
   <Router>
     <Route
       path="/"
-      render={props => (
+      render={(props) => (
         <ThemeProvider theme={theme}>
           <App {...props} />
         </ThemeProvider>

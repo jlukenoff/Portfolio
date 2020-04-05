@@ -6,8 +6,13 @@ import { createMuiTheme } from "@material-ui/core";
 export const theme = createMuiTheme({
   palette: {
     primary: { main: "#C2C9D4" },
-    secondary: { main: "#0D1B1E" }
-  }
+    secondary: { main: "#0D1B1E" },
+  },
+  typography: {
+    h6: {
+      fontWeight: "700",
+    },
+  },
 });
 
 export const RootContainer = styled.div`
@@ -15,6 +20,7 @@ export const RootContainer = styled.div`
 
   font-family: Raleway;
   width: 100%;
+  height: 100%;
 
   .module-appear {
     opacity: 0.01;
@@ -42,7 +48,7 @@ export const Gradient = styled.div`
   top: 0;
   left: 0;
   background-color: #fff;
-  opacity: 0.3;
+  opacity: 0.5;
   z-index: -1;
 `;
 export const NavContainer = styled.div`
@@ -68,8 +74,7 @@ export const ContentContainer = styled.div`
 export const ModuleContainer = styled.div`
   display: flex;
   flex-flow: column;
-  font-weight: 700;
-  min-height: 800px;
+  margin-bottom: 50px;
 
   @media only screen and (max-width: 420px) {
     align-items: center;
@@ -193,6 +198,7 @@ export const LogoImage = styled.img`
 
 export const TechWidgetContainer = styled.div`
   width: 80%;
+  max-width: 600px;
   margin: 0 auto 100px;
   display: flex;
   flex-flow: row wrap;
@@ -276,7 +282,7 @@ export const DownloadButton = styled.a`
 `;
 
 export const Img = styled.img(
-  props => `
+  (props) => `
   background-image: url(${props.image});
 
 `

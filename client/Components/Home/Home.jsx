@@ -9,23 +9,23 @@ import {
   CenteredImage,
   DownloadButton,
   // RightSubTitleText,
-  StyledDocument
+  StyledDocument,
 } from "../Styles/Styles";
 // import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
   downloadButton: {
     textDecoration: "none",
-    width: "200px",
+    width: "400px",
     textAlign: "center",
-    margin: "auto"
+    margin: " 40px auto",
   },
   innerContent: {
-    padding: "20px"
+    padding: "20px",
   },
   paper: {
-    backgroundColor: "rgba(253, 253, 253, 0.8)"
-  }
+    backgroundColor: "rgba(253, 253, 253, 0.8)",
+  },
 });
 
 const Home = () => {
@@ -40,7 +40,9 @@ const Home = () => {
       transitionLeave={false}
     >
       <ModuleContainer key="home">
-        <SubTitleText>Software Engineer</SubTitleText>
+        <SubTitleText style={{ marginTop: "50px" }}>
+          Software Engineer
+        </SubTitleText>
         <Paper className={classes.paper} color="primary">
           <Container maxWidth="md" className={classes.innerContent}>
             <Typography variant="body1">
@@ -76,7 +78,7 @@ const Home = () => {
           component={DownloadButton}
           variant="contained"
           className={classes.downloadButton}
-          href="https://s3-us-west-1.amazonaws.com/johnportfolio/resume.pdf"
+          href="https://storage.googleapis.com/john-lukenoff-portoflio/static/Resume.pdf"
           ariaLabel="Click to download pdf"
           target="_blank"
           color="primary"
