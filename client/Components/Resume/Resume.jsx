@@ -1,7 +1,7 @@
 import React from "react";
 // import { Document } from "react-pdf";
 import { ModuleContainer } from "../Styles/Styles";
-import { Fab } from "@material-ui/core";
+import Fab from "@material-ui/core/Fab";
 import CloudDownload from "@material-ui/icons/CloudDownload";
 import { makeStyles } from "@material-ui/core/styles";
 

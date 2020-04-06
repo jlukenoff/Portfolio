@@ -3,34 +3,30 @@ import PropTypes from "prop-types";
 import React, { lazy, Suspense, useState } from "react";
 import { Switch, Route, Redirect, Link } from "react-router-dom";
 
+import AppBar from "@material-ui/core/AppBar";
+import Slide from "@material-ui/core/Slide";
+import Typography from "@material-ui/core/Typography";
+import Toolbar from "@material-ui/core/Toolbar";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import Container from "@material-ui/core/Container";
+import Tab from "@material-ui/core/Tab";
+import Tabs from "@material-ui/core/Tabs";
+import { useMediaQuery } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+
 import Home from "../Home/Home";
 import Footer from "../Footer/Footer";
-
-import {
-  AppBar,
-  Slide,
-  Typography,
-  Toolbar,
-  useScrollTrigger,
-  Container,
-  Tab,
-  Tabs,
-} from "@material-ui/core";
-
-import { makeStyles } from "@material-ui/core/styles";
 const Tech = lazy(() => import("../Tech/Tech"));
 const Projects = lazy(() => import("../Projects/Projects"));
 const Resume = lazy(() => import("../Resume/Resume"));
 
-import {
-  RootContainer,
-  Gradient,
-  PageTitle,
-  StyledNavLink,
-  theme,
-} from "../Styles/Styles";
+import { RootContainer, Gradient } from "../Styles/Styles";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   appContainer: {
     paddingTop: "100px",
     minHeight: "calc(100% - 100px)",
@@ -39,6 +35,12 @@ const useStyles = makeStyles({
     minHeight: "60px",
     justifyContent: "space-between",
   },
+  appBar: {
+    // [theme.breakpoints.down("sm")]: {
+    //   maxWidth: "calc(100% - 42px)",
+    //   left: 0,
+    // },
+  },
   mainLink: {
     color: "#fff ",
     textDecoration: "none",
@@ -46,7 +48,26 @@ const useStyles = makeStyles({
   tab: {
     minWidth: "100px",
   },
-});
+  backgroundImg: {
+    height: "auto",
+    zIndex: "-2",
+    position: "fixed",
+    bottom: "0",
+    left: "0",
+    width: "100%",
+    [theme.breakpoints.down("sm")]: {
+      left: "-25px",
+      height: "100%",
+      width: "auto",
+    },
+  },
+  mobileMenu: {
+    top: "62px !important",
+    width: "90%",
+    position: "relative",
+    right: "5%",
+  },
+}));
 
 const Loading = (Comp) => (props) => (
   <Suspense fallback={<h2 style={{ textAlign: "center" }}>Loading...</h2>}>
@@ -71,8 +92,11 @@ HideOnScroll.propTypes = {
 
 const App = (props) => {
   const { location = {} } = props;
-  const [backgroundImgSrc, setBackgroundImgSrc] = useState();
+  const [backgroundImgSrc, setBackgroundImgSrc] = useState("");
+  const [anchorEl, setAnchorEl] = useState(null);
   const classes = useStyles();
+  const isMobile = useMediaQuery("(max-width: 576px)");
+  const open = Boolean(anchorEl);
 
   new Promise((resolve, reject) => {
     const src =
@@ -91,23 +115,26 @@ const App = (props) => {
       console.error(`Error getting background img src: ${err.message}`)
     );
 
+  const pathNames = ["about", "projects", "tech", "resume"];
+
+  const handleMenu = (e) => {
+    setAnchorEl(e.currentTarget);
+  };
+  // css={css`
+  //   height: auto;
+  //   z-index: -2;
+  //   position: fixed;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 100%;
+  // `}
   return (
     <RootContainer>
-      <img
-        src={backgroundImgSrc}
-        css={css`
-          height: auto;
-          z-index: -2;
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-        `}
-      />
+      <img src={backgroundImgSrc} className={classes.backgroundImg} />
       <Gradient />
       {/* <Nav {...state} {...props} /> */}
       <HideOnScroll {...props}>
-        <AppBar color="primary" elevation={1}>
+        <AppBar color="primary" elevation={1} className={classes.appBar}>
           <Toolbar className={classes.toolbar}>
             <Typography
               component={Link}
@@ -117,22 +144,56 @@ const App = (props) => {
             >
               John Lukenoff
             </Typography>
-            <Tabs
-              value={
-                location.pathname ? location.pathname.split("/")[1] : "about"
-              }
-            >
-              {["about", "projects", "tech", "resume"].map((path) => (
-                <Tab
-                  component={Link}
-                  key={path}
-                  to={path}
-                  value={path}
-                  className={classes.tab}
-                  label={`${path[0].toUpperCase()}${path.slice(1)}`}
-                />
-              ))}
-            </Tabs>
+            {!isMobile ? (
+              <Tabs
+                value={
+                  location.pathname ? location.pathname.split("/")[1] : "about"
+                }
+              >
+                {pathNames.map((path) => (
+                  <Tab
+                    component={Link}
+                    key={path}
+                    to={path}
+                    value={path}
+                    className={classes.tab}
+                    label={`${path[0].toUpperCase()}${path.slice(1)}`}
+                  />
+                ))}
+              </Tabs>
+            ) : (
+              <Menu
+                open={open}
+                classes={{ paper: classes.mobileMenu }}
+                onClose={() => setAnchorEl(null)}
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+              >
+                {pathNames.map((path) => (
+                  <MenuItem
+                    component={Link}
+                    key={path}
+                    to={path}
+                    className={classes.tab}
+                    onClick={() => setAnchorEl(null)}
+                  >
+                    {`${path[0].toUpperCase()}${path.slice(1)}`}
+                  </MenuItem>
+                ))}
+              </Menu>
+            )}
+            {isMobile && (
+              <IconButton onClick={handleMenu}>
+                <MenuIcon />
+              </IconButton>
+            )}
           </Toolbar>
         </AppBar>
       </HideOnScroll>

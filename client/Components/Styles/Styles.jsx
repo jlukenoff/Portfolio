@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
 import { NavLink, Link } from "react-router-dom";
 // import ReactSVG from "react-svg";
-import { createMuiTheme } from "@material-ui/core";
+import { createMuiTheme as makeTheme } from "@material-ui/core";
 
-export const theme = createMuiTheme({
+export const theme = makeTheme({
   palette: {
     primary: { main: "#173953", contrastText: "#fff" },
-    secondary: { main: "#759FBC" },
+    secondary: { main: "#DB504A" },
     background: { default: "CEDBDF" },
   },
   typography: {

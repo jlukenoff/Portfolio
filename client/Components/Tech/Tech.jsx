@@ -1,25 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactCSSTransitionsGroup from "react-addons-css-transition-group";
 import { ModuleContainer } from "../Styles/Styles";
 import ExpandMore from "@material-ui/icons/ExpandMore";
-import {
-  ExpansionPanel,
-  ExpansionPanelSummary,
-  ExpansionPanelDetails,
-  Container,
-  Typography,
-} from "@material-ui/core";
+import ExpansionPanel from "@material-ui/core/ExpansionPanel";
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
+import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
 
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   panelSummary: {
-    "& > .MuiExpansionPanelSummary-content": {
-      alignItems: "center",
-    },
     "& img": {
       marginRight: "10px",
     },
+  },
+  panelSummaryContent: {
+    alignItems: "center",
   },
   panelsContainer: {
     maxWidth: "600px",
@@ -29,24 +27,28 @@ const useStyles = makeStyles({
   },
 });
 
-const TechWidget = ({ name, description, projectList, logoSrc }) => {
+const TechWidget = ({ name, description, projectList, logoSrc, index }) => {
   const classes = useStyles();
+  const [expanded, setExpanded] = useState(index === 0);
   return (
-    <ExpansionPanel fullWidth>
+    <ExpansionPanel expanded={expanded} onChange={() => setExpanded(!expanded)}>
       <ExpansionPanelSummary
         expandIcon={<ExpandMore />}
-        className={classes.panelSummary}
+        classes={{
+          root: classes.panelSummary,
+          content: classes.panelSummaryContent,
+        }}
       >
         <img
           style={{ width: "35px" }}
-          ariaHidden="true"
+          alt={`${name} logo`}
           src={`https://storage.cloud.google.com/john-lukenoff-portoflio/static${logoSrc}`}
         />
         {name}
       </ExpansionPanelSummary>
       <ExpansionPanelDetails className={classes.panelDetails}>
         <Typography variant="body1">{`\t${description}`}</Typography>
-        <Typography variant="h6" className={{ paddingTop: "10px" }}>
+        <Typography variant="h6" style={{ paddingTop: "10px" }}>
           Projects:
         </Typography>
         <Typography variant="body1">{projectList.join(", ")}</Typography>
@@ -111,8 +113,8 @@ const Tech = (props) => {
               ],
               logoSrc: "/html5.svg",
             },
-          ].map((obj) => (
-            <TechWidget {...obj} key={obj.name} />
+          ].map((obj, i) => (
+            <TechWidget {...obj} index={i} key={obj.name} />
           ))}
         </Container>
       </ModuleContainer>
@@ -172,8 +174,8 @@ const Tech = (props) => {
               projectList: ["Vacation.ly", "Shopr", "Home Automation Server"],
               logoSrc: "/mongodb.svg",
             },
-          ].map((obj) => (
-            <TechWidget {...obj} key={obj.name} />
+          ].map((obj, i) => (
+            <TechWidget {...obj} index={i} key={obj.name} />
           ))}
         </Container>
       </ModuleContainer>
@@ -234,8 +236,8 @@ const Tech = (props) => {
               ],
               logoSrc: "/linux.svg",
             },
-          ].map((obj) => (
-            <TechWidget {...obj} key={obj.name} />
+          ].map((obj, i) => (
+            <TechWidget {...obj} index={i} key={obj.name} />
           ))}
         </Container>
       </ModuleContainer>

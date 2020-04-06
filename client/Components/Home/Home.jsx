@@ -1,6 +1,9 @@
 import React from "react";
 import ReactCSSTransitionsGroup from "react-addons-css-transition-group";
-import { Container, Button, Paper, Typography } from "@material-ui/core";
+import Container from "@material-ui/core/Container";
+import Button from "@material-ui/core/Button";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   ModuleContainer,
@@ -13,12 +16,15 @@ import {
 } from "../Styles/Styles";
 // import PropTypes from 'prop-types';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   downloadButton: {
     textDecoration: "none",
     width: "400px",
     textAlign: "center",
     margin: " 40px auto",
+    [theme.breakpoints.down("xs")]: {
+      width: "80%",
+    },
   },
   innerContent: {
     padding: "20px",
@@ -28,7 +34,7 @@ const useStyles = makeStyles({
     backgroundColor: "#FCFCFC",
     // color: "#fff",
   },
-});
+}));
 
 const Home = () => {
   const classes = useStyles();
@@ -83,7 +89,7 @@ const Home = () => {
           href="https://storage.googleapis.com/john-lukenoff-portoflio/static/Resume.pdf"
           ariaLabel="Click to download pdf"
           target="_blank"
-          color="primary"
+          color="secondary"
         >
           My Resume
         </Button>

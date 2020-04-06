@@ -1,18 +1,17 @@
 import React from "react";
 import {
   StyledFooter,
-  NavIcon,
   LinkContainer,
   ContactInfoContainer,
-  SocialLinksContainer
+  SocialLinksContainer,
 } from "../Styles/Styles";
 
-import { IconButton, makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 // import PropTypes from 'prop-types';
 const useStyles = makeStyles({
   iconButtons: {
-    height: "35px"
-  }
+    height: "35px",
+  },
 });
 
 /**
@@ -22,16 +21,16 @@ const useStyles = makeStyles({
  *
  *
  */
-const Footer = props => {
+const Footer = (props) => {
   const classes = useStyles();
   return (
     <StyledFooter>
       <SocialLinksContainer>
         {[
           ["https://github.com/jlukenoff", "github.svg"],
-          ["https://linkedin.com/in/jlukenoff", "linkedin.svg"]
+          ["https://linkedin.com/in/jlukenoff", "linkedin.svg"],
         ].map(([href, imgSrc]) => (
-          <LinkContainer href={href} target="_blank">
+          <LinkContainer href={href} target="_blank" key={imgSrc}>
             <img
               src={`https://storage.cloud.google.com/john-lukenoff-portoflio/static/${imgSrc}`}
               className={classes.iconButtons}
