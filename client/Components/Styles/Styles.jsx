@@ -10,6 +10,9 @@ export const theme = makeTheme({
     background: { default: "CEDBDF" },
   },
   typography: {
+    button: {
+      textTransform: "none",
+    },
     h6: {
       fontWeight: "700",
     },

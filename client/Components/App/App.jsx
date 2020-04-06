@@ -48,6 +48,10 @@ const useStyles = makeStyles((theme) => ({
   tab: {
     minWidth: "100px",
   },
+  tabText: {
+    fontSize: "1rem",
+    letterSpacing: "0.05rem",
+  },
   backgroundImg: {
     height: "auto",
     zIndex: "-2",
@@ -120,14 +124,7 @@ const App = (props) => {
   const handleMenu = (e) => {
     setAnchorEl(e.currentTarget);
   };
-  // css={css`
-  //   height: auto;
-  //   z-index: -2;
-  //   position: fixed;
-  //   bottom: 0;
-  //   left: 0;
-  //   width: 100%;
-  // `}
+
   return (
     <RootContainer>
       <img src={backgroundImgSrc} className={classes.backgroundImg} />
@@ -156,7 +153,7 @@ const App = (props) => {
                     key={path}
                     to={path}
                     value={path}
-                    className={classes.tab}
+                    classes={{ root: classes.tab, wrapper: classes.tabText }}
                     label={`${path[0].toUpperCase()}${path.slice(1)}`}
                   />
                 ))}

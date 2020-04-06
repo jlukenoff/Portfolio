@@ -12,9 +12,11 @@ const useStyles = makeStyles({
     margin: "auto",
   },
   downloadButton: {
-    "& a": {
-      padding: "15px",
-    },
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "125px",
+    position: "absolute",
+    right: "10px",
   },
 });
 const Resume = () => {
@@ -25,13 +27,14 @@ const Resume = () => {
         src="https://storage.cloud.google.com/john-lukenoff-portoflio/static/Resume.png"
         className={classes.resumeImg}
       />
-      <Fab className={classes.downloadButton}>
-        <a
-          href="https://storage.cloud.google.com/john-lukenoff-portoflio/static/Resume.pdf"
-          target="_blank"
-        >
-          <CloudDownload color="primary" />
-        </a>
+      <Fab
+        classes={{ root: classes.downloadButton }}
+        variant="extended"
+        component={(p) => <a {...p} />}
+        href="https://storage.cloud.google.com/john-lukenoff-portoflio/static/Resume.pdf"
+        target="_blank"
+      >
+        <CloudDownload color="primary" /> Download
       </Fab>
     </ModuleContainer>
   );

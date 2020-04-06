@@ -48,7 +48,7 @@ const Home = () => {
       transitionLeave={false}
     >
       <ModuleContainer key="home">
-        <SubTitleText style={{ marginTop: "50px" }}>
+        <SubTitleText style={{ marginTop: "25px" }}>
           Software Engineer
         </SubTitleText>
         <Paper className={classes.paper} color="secondary">
@@ -64,8 +64,8 @@ const Home = () => {
               Java, Python and PHP codebases.
               <br />
               <br />
-              I moved to the Bay Area in 2014 from a small town in Indiana.
-              Fulfilled one of my dreams, by starting a business at the age of
+              I moved to the Bay Area in 2014 from a small town in Indiana. I
+              fulfilled one of my dreams, by starting a business at the age of
               21 - Lukenoff Associates. I built my business by gathering a full
               force of clients, traveling around the Bay Area providing home
               remodeling and repair services.
@@ -75,7 +75,7 @@ const Home = () => {
               enter the world of Tech in the Silicon Valley. I spent 6 months
               learning the basics of programming and was accepted to one of the
               top Software Engineering Bootcamps in the Bay Area, Hack Reactor.
-              Upon completion of Hack Reactor I landed my first job as an
+              Upon completion of Hack Reactor I began my first job as an
               engineer at Narvar, where I have worked in collaboration with
               Enterprise and Commercial e-commerce brands to implement solutions
               that simplify the lives of every day consumers
