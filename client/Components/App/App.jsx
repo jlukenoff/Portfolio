@@ -119,7 +119,7 @@ const App = (props) => {
       console.error(`Error getting background img src: ${err.message}`)
     );
 
-  const pathNames = ["about", "projects", "tech", "resume"];
+  const pathNames = ["about", /* "projects", */ "tech", "resume"];
 
   const handleMenu = (e) => {
     setAnchorEl(e.currentTarget);
