@@ -9,3 +9,4 @@ img/**
 .env
 stats.json
 .firebase/
+**.log
