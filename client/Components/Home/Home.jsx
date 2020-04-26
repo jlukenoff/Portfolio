@@ -4,6 +4,9 @@ import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+import Avatar from "@material-ui/core/Avatar";
+import SaveAltIcon from "@material-ui/icons/SaveAlt";
+
 import { makeStyles } from "@material-ui/core/styles";
 import {
   ModuleContainer,
@@ -11,10 +14,8 @@ import {
   HorizontalBlock,
   CenteredImage,
   DownloadButton,
-  // RightSubTitleText,
   StyledDocument,
 } from "../Styles/Styles";
-// import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
   downloadButton: {
@@ -34,6 +35,24 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#FCFCFC",
     // color: "#fff",
   },
+  saveIcon: {
+    marginLeft: "5px",
+    verticalAlign: "top",
+  },
+  avatar: {
+    marginLeft: "auto",
+    position: "absolute",
+    right: "20px",
+    top: "75px",
+    width: "200px",
+    height: "200px",
+    [theme.breakpoints.down("xs")]: {
+      margin: "10px auto",
+      position: "relative",
+      right: "unset",
+      top: "unset",
+    },
+  },
 }));
 
 const Home = () => {
@@ -52,33 +71,41 @@ const Home = () => {
           Software Engineer
         </SubTitleText>
         <Paper className={classes.paper} color="secondary">
+          <Avatar
+            className={classes.avatar}
+            alt="Profile photo"
+            src="https://storage.cloud.google.com/john-lukenoff-portoflio/static/profile.jpg"
+          />
           <Container maxWidth="md" className={classes.innerContent}>
             <Typography variant="body1">
-              My aptitude for problem-solving and technology has driven my
-              ability to deploy and maintain solutions for e-commerce brands of
-              varying sizes and markets. I have implemented integrations with
-              legacy systems as well as those on the bleeding edge by remaining
-              versatile and approaching every problem as a puzzle to be solved.
-              I am most skilled in full-stack Javascript (primarily NodeJS and
-              React) and have collaborated with clients in enabling services for
-              Java, Python and PHP codebases.
+              <span style={{ marginLeft: "1.5em" }}></span> My aptitude for
+              problem-solving and technology has driven my ability to deploy and
+              maintain solutions for e-commerce brands of varying sizes and
+              markets. I have implemented integrations with legacy systems as
+              well as those on the bleeding edge by remaining versatile and
+              approaching every problem as a puzzle to be solved. I am most
+              skilled in full-stack Javascript (primarily NodeJS and React) and
+              have collaborated with clients in enabling services for Java,
+              Python and PHP codebases.
               <br />
               <br />
-              I moved to the Bay Area in 2014 from a small town in Indiana. I
-              fulfilled one of my dreams, by starting a business at the age of
-              21 - Lukenoff Associates. I built my business by gathering a full
-              force of clients, traveling around the Bay Area providing home
-              remodeling and repair services.
+              <span style={{ marginLeft: "1.5em" }}></span>I moved to the Bay
+              Area in 2014 from a small town in Indiana. I fulfilled one of my
+              dreams, by starting a business at the age of 21 - Lukenoff
+              Associates. I built my business by gathering a full force of
+              clients, traveling around the Bay Area providing home remodeling
+              and repair services.
               <br />
               <br />
-              Eventually, I decided it was time to switch careers, and finally
-              enter the world of Tech in the Silicon Valley. I spent 6 months
-              learning the basics of programming and was accepted to one of the
-              top Software Engineering Bootcamps in the Bay Area, Hack Reactor.
-              Upon completion of Hack Reactor I began my first job as an
-              engineer at Narvar, where I have worked in collaboration with
-              Enterprise and Commercial e-commerce brands to implement solutions
-              that simplify the lives of every day consumers
+              <span style={{ marginLeft: "1.5em" }}></span>Eventually, I decided
+              it was time to switch careers, and finally enter the world of Tech
+              in the Silicon Valley. I spent 6 months learning the basics of
+              programming and was accepted to one of the top Software
+              Engineering Bootcamps in the Bay Area, Hack Reactor. Upon
+              completion of Hack Reactor I began my first job as an engineer at
+              Narvar, where I have worked in collaboration with Enterprise and
+              Commercial e-commerce brands to implement solutions that simplify
+              the lives of every day consumers
             </Typography>
           </Container>
         </Paper>
@@ -92,6 +119,7 @@ const Home = () => {
           color="secondary"
         >
           My Resume
+          <SaveAltIcon className={classes.saveIcon} />
         </Button>
       </ModuleContainer>
     </ReactCSSTransitionsGroup>
