@@ -8,9 +8,8 @@ import { ThemeProvider } from "@material-ui/core";
 import "normalize.css";
 
 render(
-  <Router>
+  <Router basename="app">
     <Route
-      path="/"
       render={(props) => (
         <ThemeProvider theme={theme}>
           <App {...props} />

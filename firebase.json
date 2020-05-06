@@ -4,9 +4,21 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
-        "source": "/**",
+        "source": "/back-door",
+        "function": "roombas"
+      },
+      {
+        "source": "/app{,/**}",
         "destination": "/index.html"
       }
     ]
+  },
+  "functions": {
+    "source": "functions"
+  },
+  "emulators": {
+    "firestore": {
+      "port": 8080
+    }
   }
 }

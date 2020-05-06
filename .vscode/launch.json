@@ -10,6 +10,26 @@
       "name": "Launch Chrome against localhost",
       "url": "http://localhost:5000",
       "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to firebase functions",
+      "port": 9229
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "vuejs: chrome",
+      "url": "http://localhost:5001/john-lukenoff-portfolio/us-central1/roombas/",
+      "webRoot": "${workspaceFolder}/functions/",
+      "breakOnLoad": true,
+      "sourceMapPathOverrides": {
+        "webpack:///./src/*": "${webRoot}/*",
+        "webpack:///src/*": "${webRoot}/*",
+        "webpack:///*": "*",
+        "webpack:///./~/*": "${webRoot}/node_modules/*"
+      }
     }
   ]
 }

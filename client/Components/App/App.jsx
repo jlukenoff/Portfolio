@@ -2,6 +2,7 @@
 import PropTypes from "prop-types";
 import React, { lazy, Suspense, useState } from "react";
 import { Switch, Route, Redirect, Link } from "react-router-dom";
+import loadable from "@loadable/component";
 
 import AppBar from "@material-ui/core/AppBar";
 import Slide from "@material-ui/core/Slide";
@@ -20,9 +21,9 @@ import MenuIcon from "@material-ui/icons/Menu";
 
 import Home from "../Home/Home";
 import Footer from "../Footer/Footer";
-const Tech = lazy(() => import("../Tech/Tech"));
-const Projects = lazy(() => import("../Projects/Projects"));
-const Resume = lazy(() => import("../Resume/Resume"));
+const Tech = loadable(() => import("../Tech/Tech"));
+const Projects = loadable(() => import("../Projects/Projects"));
+const Resume = loadable(() => import("../Resume/Resume"));
 
 import { RootContainer, Gradient } from "../Styles/Styles";
 
