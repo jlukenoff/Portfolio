@@ -16,7 +16,6 @@ const schema = buildSchema(`
     previousBoards: [String]
   }
 
-
   type Query {
     name: String
     getUser(name: String): UserRecord
@@ -25,8 +24,6 @@ const schema = buildSchema(`
     newUser(name: String): UserRecord
     boardDirections(board: String, initialCoordinates: [Int]): [String]
   }
-
-
 `);
 
 class User {
@@ -115,7 +112,7 @@ const root = {
     User.traverseBoard(board, startingCoordinates),
 };
 
-app.use(express.static("./public"));
+app.use(express.static("public"));
 
 app.use(
   "/graphql",

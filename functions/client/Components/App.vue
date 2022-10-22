@@ -28,11 +28,17 @@
           max="100"
         />%
       </div>
+      <label for="traversal-directions">Traversal Directions</label>
+      <input
+        type="number"
+        id="traversal-directions"
+        v-model="newMatrixArgs.directions"
+      />
       <button type="button" @click="newBoard">
         Get New Random Matrix
       </button>
     </form>
-    <button type="button" @click="getBoardTraversalDirections()">
+    <button type="button" @click="travserseMatrix()">
       Get Traversal Directions
     </button>
     <Board :matrix="matrix" />
@@ -45,7 +51,7 @@ import gql from "graphql-tag";
 export default {
   name: "App",
   components: {
-    Board,
+    Board
   },
   methods: {
     async setMatrix(e) {
@@ -58,7 +64,7 @@ export default {
     async newBoard(e) {
       e.preventDefault();
       const {
-        data: { newBoard } = { newBoard: "" },
+        data: { newBoard } = { newBoard: "" }
       } = await this.$apollo.query({
         // Query
         query: gql`
@@ -72,13 +78,13 @@ export default {
         variables: {
           width: +this.newMatrixArgs.width,
           height: +this.newMatrixArgs.height,
-          dirtPercentage: +this.newMatrixArgs.dirtPercentage,
+          dirtPercentage: +this.newMatrixArgs.dirtPercentage
         },
         result({ data: { newBoard }, loading }) {
           if (!loading) {
             this.matrix = parseMatrixString(newBoard);
           }
-        },
+        }
       });
 
       if (newBoard) {
@@ -98,10 +104,10 @@ export default {
         `,
         // Parameters
         variables: {
-          label: this.newTag,
-        },
+          label: this.newTag
+        }
       });
-    },
+    }
   },
 
   data: function() {
@@ -110,31 +116,31 @@ export default {
       newMatrixArgs: {
         width: 5,
         height: 5,
-        dirtPercentage: 30,
-      },
+        dirtPercentage: 30
+      }
     };
-  },
+  }
 };
 
 function parseMatrixString(str) {
-  return str.split("\n").map((r) => r.split(",").map((v) => +v));
+  return str.split("\n").map(r => r.split(",").map(v => +v));
 }
 </script>
 
 <style lang="scss" scoped>
-#app {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin: auto;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-
-  form {
+  #app {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: auto;
     display: flex;
     flex-flow: column;
-    max-width: 400px;
-    padding: 20px;
-    margin: auto;
+    align-items: center;
+
+    form {
+      display: flex;
+      flex-flow: column;
+      max-width: 400px;
+      padding: 20px;
+      margin: auto;
+    }
   }
-}
 </style>
