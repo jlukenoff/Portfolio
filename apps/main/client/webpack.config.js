@@ -2,9 +2,9 @@ const path = require("path");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 
-const ENTRY_POINT = path.resolve(__dirname, "client/index.jsx");
+const ENTRY_POINT = path.resolve(__dirname, "./index.jsx");
 
-const OUTPUT_DIR = path.resolve(__dirname, "public");
+const OUTPUT_DIR = path.resolve(__dirname, "../public");
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -21,7 +21,7 @@ module.exports = {
     extensions: [".js", ".jsx"],
   },
   devServer: {
-    contentBase: path.join(__dirname, "public"),
+    contentBase: path.join(__dirname, "../public"),
     historyApiFallback: true,
     compress: true,
     port: 8080,

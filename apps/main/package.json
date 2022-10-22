@@ -8,8 +8,8 @@
     "test": "jest",
     "dev:server": "nodemon --inspect public/server.js",
     "build": "NODE_ENV=production webpack -p --progress",
-    "dev:build-server": "webpack --config server.webpack.config.js -w",
-    "dev:client": "webpack-dev-server",
+    "dev:build:server": "webpack --config server/webpack.config.js -w",
+    "dev:client": "webpack-dev-server --config client/webpack.config.js",
     "dev:build": "NODE_ENV=development webpack -w",
     "docker-compose": "docker run -d -p 8080:3000 -v $(pwd):/src/app --name mern-boilerplate jlukenoff/mern-boilerplate",
     "dev:functions": "firebase emulators:start --inspect-functions 9229 --only functions",
@@ -69,6 +69,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
+    "@types/express": "^4.17.14",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",

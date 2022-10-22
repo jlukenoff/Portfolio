@@ -1,10 +1,10 @@
-import express from 'express';
-import React from 'react';
-import { renderStylesToString } from 'emotion-server';
-import { renderToString } from 'react-dom/server';
-import { StaticRouter } from 'react-router';
-import redisClient from '../redis';
-import App from '../../client/Components/App/App';
+import express from "express";
+import React from "react";
+import { renderStylesToString } from "emotion-server";
+import { renderToString } from "react-dom/server";
+import { StaticRouter } from "react-router";
+import redisClient from "../../redis";
+import App from "../../../client/Components/App/App";
 
 const router = express.Router();
 
@@ -26,13 +26,13 @@ router.use((req, res, next) => {
             </StaticRouter>
           )
         );
-        redisClient.set(req.url, markup, e => {
+        redisClient.set(req.url, markup, (e) => {
           if (e)
             return console.error(`Error setting markup in redis cache: ${e}`);
-          return console.log('Success, saved markup in redis');
+          return console.log("Success, saved markup in redis");
         });
       } else {
-        console.log('Success, retrieved from redis');
+        console.log("Success, retrieved from redis");
       }
       if (context.url) {
         return res.redirect(context.url);
