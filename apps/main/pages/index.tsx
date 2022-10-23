@@ -3,7 +3,13 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { styled } from "@mui/material/styles";
 
-import { frontEnd, backEnd, tools, TechCardItem } from "./config/tech";
+import {
+  languages,
+  frontEnd,
+  backEnd,
+  tools,
+  TechCardItem,
+} from "./config/tech";
 import Image from "next/image";
 
 const SectionWrapper = styled("div")({
@@ -58,6 +64,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
+        <TechSection title="Languages I speak" items={languages} />
         <TechSection title="Front End" items={frontEnd} />
         <TechSection title="Back End" items={backEnd} />
         <TechSection title="Tooling + Ops" items={tools} />
