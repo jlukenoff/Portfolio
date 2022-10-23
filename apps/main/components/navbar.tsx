@@ -15,11 +15,15 @@ import { Menu as MenuIcon } from "@mui/icons-material";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const paths = ["/about", "/experience"];
+const paths = [
+  { label: "HOME", path: "/" },
+  { label: "ABOUT", path: "/about" },
+  { label: "EXPERIENCE", path: "/experience" },
+];
 
 const StyledTab = styled(Tab)<
   // TODO: why isn't this prop getting recognized?
-  TabProps & { component: (props: any) => ReactElement }
+  TabProps & { component: (props: any, ref: any) => ReactElement }
 >(
   ({
     theme: {
@@ -45,7 +49,7 @@ const NavBar: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<Element | null>(null);
 
   return (
-    <AppBar elevation={1}>
+    <AppBar position="static" elevation={1}>
       <Toolbar
         sx={{
           justifyContent: "space-between",
@@ -62,19 +66,18 @@ const NavBar: React.FC = () => {
               margin: "auto 0",
             }}
           >
-            {paths.map((path) => (
+            {paths.map(({ label, path }) => (
               <StyledTab
                 key={path}
                 value={path}
-                component={(props) => {
-                  // if (path === paths[0]) debugger;
+                component={(props, ref) => {
                   return (
-                    <Link href={path}>
-                      <a {...props}>{path.slice(1).toUpperCase()}</a>
+                    <Link href={path} ref={ref}>
+                      <a {...props}>{label}</a>
                     </Link>
                   );
                 }}
-                label={path.slice(1).toUpperCase()}
+                label={label}
               />
             ))}
           </Tabs>
@@ -92,12 +95,11 @@ const NavBar: React.FC = () => {
               horizontal: "left",
             }}
           >
-            {paths.map((path) => (
+            {paths.map(({ path, label }) => (
               <MenuItem key={path}>
-                <Link href={path}></Link>
-                <Typography component={"a"} onClick={() => setAnchorEl(null)}>
-                  {path.slice(1)}
-                </Typography>
+                <Link href={path}>
+                  <a onClick={() => setAnchorEl(null)}>{label}</a>
+                </Link>
               </MenuItem>
             ))}
           </Menu>

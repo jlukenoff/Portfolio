@@ -5,8 +5,7 @@ import React from "react";
 
 const StyledFooter = styled.footer({
   bottom: 0,
-  width: "100%",
-  position: "absolute",
+  position: "relative",
 });
 
 const Footer: React.FC = (props) => {
