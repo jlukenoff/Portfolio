@@ -9,7 +9,7 @@ import {
   backEnd,
   tools,
   TechCardItem,
-} from "./config/tech";
+} from "../config/tech";
 import Image from "next/image";
 
 const SectionWrapper = styled("div")({

@@ -1,21 +1,21 @@
 import { StaticImageData } from "next/image";
 
 // Logos
-import react from "../../public/logos/react.png";
-import html5 from "../../public/logos/html5.png";
-import emotion from "../../public/logos/emotion.png";
-import typescript from "../../public/logos/typescript.png";
-import nodejs from "../../public/logos/nodejs.png";
-import express from "../../public/logos/express.png";
-import postgresql from "../../public/logos/postgresql.png";
-import mongodb from "../../public/logos/mongodb.png";
-import jest from "../../public/logos/jest.png";
-import docker from "../../public/logos/docker.png";
-import linux from "../../public/logos/linux.png";
-import github from "../../public/logos/github.png";
-import kubernetes from "../../public/logos/kubernetes.png";
-import aws from "../../public/logos/aws.png";
-import python from "../../public/logos/python.png";
+import react from "../public/logos/react.png";
+import html5 from "../public/logos/html5.png";
+import emotion from "../public/logos/emotion.png";
+import typescript from "../public/logos/typescript.png";
+import nodejs from "../public/logos/nodejs.png";
+import express from "../public/logos/express.png";
+import postgresql from "../public/logos/postgresql.png";
+import mongodb from "../public/logos/mongodb.png";
+import jest from "../public/logos/jest.png";
+import docker from "../public/logos/docker.png";
+import linux from "../public/logos/linux.png";
+import github from "../public/logos/github.png";
+import kubernetes from "../public/logos/kubernetes.png";
+import aws from "../public/logos/aws.png";
+import python from "../public/logos/python.png";
 
 export interface TechCardItem {
   name: string;
