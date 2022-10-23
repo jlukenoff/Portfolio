@@ -10,6 +10,8 @@ import jest from "../../public/logos/jest.png";
 import docker from "../../public/logos/docker.png";
 import linux from "../../public/logos/linux.png";
 import github from "../../public/logos/github.png";
+import kubernetes from "../../public/logos/kubernetes.png";
+import aws from "../../public/logos/aws.png";
 import { StaticImageData } from "next/image";
 
 export interface TechCardItem {
@@ -150,5 +152,27 @@ export const tools: TechCardItem[] = [
       "Home Automation Server",
     ],
     logo: linux,
+  },
+  {
+    name: "Kubernetes",
+    description:
+      "I've achieved massive workflow and scalability improvements with Kubernetes. I've contributed to existing k8s setups and implemented ground up builds at Asana",
+    projectList: [
+      "Narvar Internal Tooling",
+      "Home Automation Server",
+      "Asana Enterprise Data Platform",
+    ],
+    logo: kubernetes,
+  },
+  {
+    name: "AWS",
+    description:
+      "AWS has dominated the cloud-native market for enterprises. At Asana I re-platformed the enterprise data pipeline stack onto dedicated AWS accounts from the ground up.",
+    projectList: [
+      "Narvar Internal Tooling",
+      "Vacation.ly",
+      "Asana Enterprise Data Platform",
+    ],
+    logo: aws,
   },
 ];

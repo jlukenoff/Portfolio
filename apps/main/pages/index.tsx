@@ -1,4 +1,4 @@
-import { Card, CardContent, Grid, Icon, Typography } from "@mui/material";
+import { Box, Card, CardContent, Grid, Icon, Typography } from "@mui/material";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { styled } from "@mui/material/styles";
@@ -33,10 +33,12 @@ const TechSection: React.FC<TechSectionProps> = ({ title, items }) => {
               }}
             >
               <CardContent>
-                <Image src={logo} alt={`${name} logo`} />
-                <Typography gutterBottom sx={{ fontWeight: "bold" }}>
-                  {name}
-                </Typography>
+                <Box>
+                  <Image src={logo} alt={`${name} logo`} />
+                  <Typography gutterBottom sx={{ fontWeight: "bold" }}>
+                    {name}
+                  </Typography>
+                </Box>
                 <Typography gutterBottom>{description}</Typography>
               </CardContent>
             </Card>
