@@ -2,11 +2,13 @@ node_modules
 coverage
 .DS_Store
 public/*.js*
-**.pdf
+# **.pdf
 img/**
-**.svg
+# **.svg
 # **.ico
 .env
 stats.json
 .firebase/
 **.log
+
+client/**/*
