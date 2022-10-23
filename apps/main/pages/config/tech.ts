@@ -15,6 +15,7 @@ import linux from "../../public/logos/linux.png";
 import github from "../../public/logos/github.png";
 import kubernetes from "../../public/logos/kubernetes.png";
 import aws from "../../public/logos/aws.png";
+import python from "../../public/logos/python.png";
 
 export interface TechCardItem {
   name: string;
@@ -49,7 +50,7 @@ export const languages: TechCardItem[] = [
   {
     name: "Python",
     description:
-      "I love Python for quick scripting, glue for infrastructure, data processing/transformation, and general purpose applications. ",
+      "I love Python for quick scripting, glue for infrastructure, data processing, and smaller general purpose applications.",
     projectList: [
       Projects.Narvar,
       Projects.Vacationly,
@@ -57,7 +58,7 @@ export const languages: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: typescript,
+    logo: python,
   },
 ];
 
@@ -65,7 +66,7 @@ export const frontEnd: TechCardItem[] = [
   {
     name: "React / React Native",
     description:
-      "React is my front-end framework of choice. I write very clean and modular components and exercise best practices in state management. I am fluent in modern features of React such as Hooks and Effects.",
+      "React is my front-end framework of choice. I write very clean and modular components and exercise best practices in state management. I am fluent in modern features of React 18+",
     projectList: [
       Projects.Narvar,
       Projects.Vacationly,
@@ -78,7 +79,7 @@ export const frontEnd: TechCardItem[] = [
   {
     name: "Styled Components",
     description:
-      "I have leveraged Styled Components primarily through EmotionJS but also have experience with other JSS alternatives. I love Styled Components for the performance, consolidated structure it brings to React, and the portability provided when server-side rendering ",
+      "I have leveraged Styled Components primarily through EmotionJS and CSS Modules.",
     projectList: [
       Projects.Narvar,
       Projects.Vacationly,
@@ -136,17 +137,18 @@ export const backEnd: TechCardItem[] = [
 
 export const tools: TechCardItem[] = [
   {
-    name: "Jest",
+    name: "Kubernetes",
     description:
-      "Jest is my go-to framework for testing. I always ensure that the modules I build are well tested with an aim for 90%+ coverage.",
-    projectList: [
-      Projects.Narvar,
-      Projects.Vacationly,
-      Projects.Portfolio,
-      Projects.Shopr,
-      Projects.HomeServer,
-    ],
-    logo: jest,
+      "I've achieved massive workflow and scalability improvements with Kubernetes. I've contributed to existing k8s setups and implemented ground up builds at Asana",
+    projectList: [Projects.Narvar, Projects.HomeServer, Projects.Asana],
+    logo: kubernetes,
+  },
+  {
+    name: "AWS",
+    description:
+      "AWS has dominated the cloud-native market for enterprises. At Asana I re-platformed the enterprise data pipeline stack onto dedicated AWS accounts from the ground up.",
+    projectList: [Projects.Narvar, Projects.Vacationly, Projects.Asana],
+    logo: aws,
   },
   {
     name: "Docker",
@@ -162,9 +164,9 @@ export const tools: TechCardItem[] = [
     logo: docker,
   },
   {
-    name: "Git",
+    name: "Git + Github",
     description:
-      "I always use git flows in my applications to manage changes and collaborate with others. I rely on best practices to organize the codebase and manage updates efficiently",
+      "I always use git flows in my applications to manage changes and collaborate with others. I rely on git best practices to organize the codebase and manage updates efficiently",
     projectList: [
       Projects.Narvar,
       Projects.Vacationly,
@@ -174,6 +176,7 @@ export const tools: TechCardItem[] = [
     ],
     logo: github,
   },
+
   {
     name: "Linux",
     description:
@@ -187,17 +190,16 @@ export const tools: TechCardItem[] = [
     logo: linux,
   },
   {
-    name: "Kubernetes",
+    name: "Jest",
     description:
-      "I've achieved massive workflow and scalability improvements with Kubernetes. I've contributed to existing k8s setups and implemented ground up builds at Asana",
-    projectList: [Projects.Narvar, Projects.HomeServer, Projects.Asana],
-    logo: kubernetes,
-  },
-  {
-    name: "AWS",
-    description:
-      "AWS has dominated the cloud-native market for enterprises. At Asana I re-platformed the enterprise data pipeline stack onto dedicated AWS accounts from the ground up.",
-    projectList: [Projects.Narvar, Projects.Vacationly, Projects.Asana],
-    logo: aws,
+      "Jest is my go-to framework for testing. I always ensure that the modules I build are well tested with an aim for 90%+ coverage.",
+    projectList: [
+      Projects.Narvar,
+      Projects.Vacationly,
+      Projects.Portfolio,
+      Projects.Shopr,
+      Projects.HomeServer,
+    ],
+    logo: jest,
   },
 ];

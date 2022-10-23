@@ -12,36 +12,14 @@ import {
 import Tab, { TabProps } from "@mui/material/Tab";
 import { styled } from "@mui/material/styles";
 import { Menu as MenuIcon } from "@mui/icons-material";
-import Link from "next/link";
+import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
 
 const paths = [
-  { label: "HOME", path: "/" },
-  { label: "ABOUT", path: "/about" },
+  { label: "ABOUT", path: "/" },
+  { label: "TECH", path: "/tech" },
   { label: "EXPERIENCE", path: "/experience" },
 ];
-
-const StyledTab = styled(Tab)<
-  // TODO: why isn't this prop getting recognized?
-  TabProps & { component: (props: any, ref: any) => ReactElement }
->(
-  ({
-    theme: {
-      palette: {
-        primary: { contrastText: color },
-      },
-    },
-  }) => ({
-    padding: "0 1rem",
-    color,
-    borderBottom: "0.3rem solid transparent",
-
-    "&.Mui-selected": {
-      color,
-      borderBottom: `0.3rem solid ${color}`,
-    },
-  })
-);
 
 const NavBar: React.FC = () => {
   const isMobile = useMediaQuery("(max-width: 576px)");
@@ -60,25 +38,18 @@ const NavBar: React.FC = () => {
         </Typography>
         {!isMobile ? (
           <Tabs
-            value={pathname || paths[0]}
+            value={paths.findIndex(({ path }) => path === pathname) || 0}
+            indicatorColor="secondary"
             sx={{
               alignItems: "center",
               margin: "auto 0",
+              fontWeight: "500",
             }}
           >
             {paths.map(({ label, path }) => (
-              <StyledTab
-                key={path}
-                value={path}
-                component={(props, ref) => {
-                  return (
-                    <Link href={path} ref={ref}>
-                      <a {...props}>{label}</a>
-                    </Link>
-                  );
-                }}
-                label={label}
-              />
+              <Link href={path} passHref key={path} prefetch>
+                <Tab label={label} sx={{ opacity: 1 }} />
+              </Link>
             ))}
           </Tabs>
         ) : (

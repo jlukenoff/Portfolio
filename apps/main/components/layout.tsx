@@ -1,9 +1,9 @@
-import Image, { ImageProps } from "next/image";
 import React from "react";
 import backgroundImage from "../public/background.jpg";
 import { styled } from "@mui/material/styles";
+import Footer from "./footer";
 
-interface BackgroundProps {
+interface LayoutProps {
   children?: React.ReactNode;
 }
 
@@ -29,14 +29,25 @@ const Gradient = styled("div")({
   zIndex: -1,
 });
 
-const Background: React.FC<BackgroundProps> = ({ children }) => {
+const PageLayout = styled("div")(({ theme }) => {
+  return {
+    width: "auto",
+    maxWidth: "926px",
+    minHeight: `calc(100vh - ${theme.spacing(5)})`,
+    position: "relative",
+    margin: `${theme.spacing(5)} auto 0`,
+  };
+});
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <BgImage />
       <Gradient />
-      {children}
+      <PageLayout>{children}</PageLayout>
+      <Footer />
     </>
   );
 };
 
-export default Background;
+export default Layout;
