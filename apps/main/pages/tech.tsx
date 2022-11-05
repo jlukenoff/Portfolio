@@ -1,7 +1,8 @@
-import { Box, Card, CardContent, Grid, Icon, Typography } from "@mui/material";
+import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { styled } from "@mui/material/styles";
+import loader from "../utils/images";
 
 import {
   languages,
@@ -14,7 +15,6 @@ import Image from "next/image";
 
 const SectionWrapper = styled("div")({
   padding: "2rem",
-  maxWidth: "80%",
   margin: "auto",
 });
 
@@ -31,15 +31,26 @@ const TechSection: React.FC<TechSectionProps> = ({ title, items }) => {
       </Typography>
       <Grid container justifyContent="flex-start" mt={1} spacing={2}>
         {items.map(({ name, description, logo }) => (
-          <Grid item key={name} xs={4} display="flex">
+          <Grid item key={name} xs={12} md={4} display="flex">
             <Card variant="outlined">
               <CardContent>
                 <Box>
-                  <Image
-                    src={logo}
-                    alt={`${name} logo`}
-                    style={{ height: "3rem", width: "auto" }}
-                  />
+                  <Box
+                    sx={{
+                      position: "relative",
+                      height: "3rem",
+                      width: "3rem",
+                      marginBottom: "0.5rem",
+                    }}
+                  >
+                    <Image
+                      loader={loader}
+                      layout="fill"
+                      src={logo}
+                      alt={`${name} logo`}
+                      objectFit="contain"
+                    />
+                  </Box>
                   <Typography gutterBottom sx={{ fontWeight: "bold" }}>
                     {name}
                   </Typography>
@@ -53,7 +64,7 @@ const TechSection: React.FC<TechSectionProps> = ({ title, items }) => {
     </SectionWrapper>
   );
 };
-const Home: NextPage = () => {
+const Tech: NextPage = () => {
   return (
     <>
       <Head>
@@ -72,4 +83,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Tech;

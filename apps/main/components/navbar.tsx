@@ -18,7 +18,7 @@ import { useRouter } from "next/router";
 const paths = [
   { label: "ABOUT", path: "/" },
   { label: "TECH", path: "/tech" },
-  { label: "EXPERIENCE", path: "/experience" },
+  // { label: "EXPERIENCE", path: "/experience" },
 ];
 
 const NavBar: React.FC = () => {
@@ -47,7 +47,7 @@ const NavBar: React.FC = () => {
             }}
           >
             {paths.map(({ label, path }) => (
-              <Link href={path} passHref key={path} prefetch>
+              <Link href={path} passHref key={path}>
                 <Tab label={label} sx={{ opacity: 1 }} />
               </Link>
             ))}

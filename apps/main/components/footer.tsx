@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
-import Link from "next/link";
 import React from "react";
 
 const StyledFooter = styled.footer({
@@ -20,7 +19,7 @@ const Footer: React.FC = (props) => {
           width: "100%",
         }}
       >
-        <Grid item>Contact me</Grid>
+        {/* <Grid item>Contact me</Grid> */}
       </Grid>
     </StyledFooter>
   );

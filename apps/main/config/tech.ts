@@ -1,27 +1,12 @@
 import { StaticImageData } from "next/image";
 
-// Logos
-import react from "../public/logos/react.png";
-import html5 from "../public/logos/html5.png";
-import emotion from "../public/logos/emotion.png";
-import typescript from "../public/logos/typescript.png";
-import nodejs from "../public/logos/nodejs.png";
-import express from "../public/logos/express.png";
-import postgresql from "../public/logos/postgresql.png";
-import mongodb from "../public/logos/mongodb.png";
-import jest from "../public/logos/jest.png";
-import docker from "../public/logos/docker.png";
-import linux from "../public/logos/linux.png";
-import github from "../public/logos/github.png";
-import kubernetes from "../public/logos/kubernetes.png";
-import aws from "../public/logos/aws.png";
-import python from "../public/logos/python.png";
+import Images from "./images";
 
 export interface TechCardItem {
   name: string;
   description: string;
   projectList: Projects[];
-  logo: StaticImageData;
+  logo: Images;
 }
 
 export enum Projects {
@@ -45,7 +30,7 @@ export const languages: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: typescript,
+    logo: Images.Typescript,
   },
   {
     name: "Python",
@@ -58,7 +43,7 @@ export const languages: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: python,
+    logo: Images.Python,
   },
 ];
 
@@ -74,7 +59,7 @@ export const frontEnd: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: react,
+    logo: Images.React,
   },
   {
     name: "Styled Components",
@@ -87,7 +72,7 @@ export const frontEnd: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: emotion,
+    logo: Images.Emotion,
   },
   {
     name: "HTML5",
@@ -100,7 +85,7 @@ export const frontEnd: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: html5,
+    logo: Images.Html5,
   },
 ];
 
@@ -110,28 +95,28 @@ export const backEnd: TechCardItem[] = [
     description:
       "I am most fluent in NodeJS as a backend language and also use NodeJS on the regular for quick scripts and making painstaking manual tasks into CLI's to automate workflows.",
     projectList: [Projects.Vacationly, Projects.Shopr, Projects.HomeServer],
-    logo: nodejs,
+    logo: Images.Nodejs,
   },
   {
     name: "ExpressJS",
     description:
       "I have used ExpressJS in most of my applications that require a well-structured, scalable backend. I have a refined discipline for writing Express servers using MVC architecture. Leveraging best practices in separating of business logic, data models, and controllers",
     projectList: [Projects.Vacationly, Projects.Shopr, Projects.HomeServer],
-    logo: express,
+    logo: Images.Express,
   },
   {
     name: "PostgreSQL",
     description:
       "I have used Postgres to add persistence to applications that require relational data models or read-heavy use-cases.",
     projectList: [Projects.Vacationly, Projects.Shopr, Projects.HomeServer],
-    logo: postgresql,
+    logo: Images.Postgresql,
   },
   {
     name: "MongoDB",
     description:
       "I've used mongoDB as a quick solution for adding a persistence layer on top of my application where relational data structures are not required.",
     projectList: [Projects.Vacationly, Projects.Shopr, Projects.HomeServer],
-    logo: mongodb,
+    logo: Images.Mongodb,
   },
 ];
 
@@ -141,14 +126,14 @@ export const tools: TechCardItem[] = [
     description:
       "I've achieved massive workflow and scalability improvements with Kubernetes. I've contributed to existing k8s setups and implemented ground up builds at Asana",
     projectList: [Projects.Narvar, Projects.HomeServer, Projects.Asana],
-    logo: kubernetes,
+    logo: Images.Kubernetes,
   },
   {
     name: "AWS",
     description:
       "AWS has dominated the cloud-native market for enterprises. At Asana I re-platformed the enterprise data pipeline stack onto dedicated AWS accounts from the ground up.",
     projectList: [Projects.Narvar, Projects.Vacationly, Projects.Asana],
-    logo: aws,
+    logo: Images.Aws,
   },
   {
     name: "Docker",
@@ -161,7 +146,7 @@ export const tools: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: docker,
+    logo: Images.Docker,
   },
   {
     name: "Git + Github",
@@ -174,7 +159,7 @@ export const tools: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: github,
+    logo: Images.Github,
   },
 
   {
@@ -187,7 +172,7 @@ export const tools: TechCardItem[] = [
       Projects.Portfolio,
       Projects.HomeServer,
     ],
-    logo: linux,
+    logo: Images.Linux,
   },
   {
     name: "Jest",
@@ -200,6 +185,6 @@ export const tools: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: jest,
+    logo: Images.Jest,
   },
 ];

@@ -6,7 +6,6 @@ import createEmotionCache from "../config/createEmotionCache";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "../config/theme";
 import NavBar from "../components/navbar";
-import Footer from "../components/footer";
 import Layout from "../components/layout";
 
 const clientSideEmotionCache = createEmotionCache();

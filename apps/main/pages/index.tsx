@@ -1,5 +1,13 @@
-import { Card, CardContent, CardHeader, Typography } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardMedia,
+  Typography,
+} from "@mui/material";
 import type { NextPage } from "next";
+import loader from "../utils/images";
+import Images from "../config/images";
 import Head from "next/head";
 
 const Home: NextPage = () => {
@@ -8,11 +16,16 @@ const Home: NextPage = () => {
       <Head>
         <title>John Lukenoff | About</title>
         <meta name="description" content="John Lukenoff - About Me" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
         <Card>
+          <CardMedia
+            src={(loader as any)({ src: Images.Profile })}
+            component="img"
+            alt="John Lukenoff profile picture"
+            sx={{ width: "calc(100% + 2px)" }}
+          />
           <CardHeader
             title="About Me"
             titleTypographyProps={{ variant: "h3", component: "h1" }}
