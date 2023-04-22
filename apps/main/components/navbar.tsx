@@ -9,8 +9,7 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import Tab, { TabProps } from "@mui/material/Tab";
-import { styled } from "@mui/material/styles";
+import Tab from "@mui/material/Tab";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
@@ -18,7 +17,7 @@ import { useRouter } from "next/router";
 const paths = [
   { label: "ABOUT", path: "/" },
   { label: "TECH", path: "/tech" },
-  // { label: "EXPERIENCE", path: "/experience" },
+  { label: "RESUME", path: "/resume" },
 ];
 
 const NavBar: React.FC = () => {
