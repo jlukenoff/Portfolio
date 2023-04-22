@@ -38,7 +38,7 @@ const PageLayout = styled("div")(({ theme }) => {
     maxWidth: "926px",
     minHeight: `calc(100vh - ${theme.spacing(5)})`,
     position: "relative",
-    margin: `${theme.spacing(5)} auto 0`,
+    margin: `${theme.spacing(5)} auto`,
   };
 });
 

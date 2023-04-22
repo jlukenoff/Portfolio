@@ -17,6 +17,8 @@ enum Images {
   Python = "logos/python.png",
   Background = "background.jpg",
   Profile = "profile.jpg",
+  Linkedin = "logos/linkedin.png",
+  Email = "logos/email.png",
 }
 
 export default Images;
