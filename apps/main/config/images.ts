@@ -15,8 +15,8 @@ enum Images {
   Kubernetes = "logos/kubernetes.png",
   Aws = "logos/aws.png",
   Python = "logos/python.png",
-  Background = "background.jpg",
-  Profile = "profile.jpg",
+  Background = "background.png",
+  Profile = "profile.png",
   Linkedin = "logos/linkedin.png",
   Email = "logos/email.png",
 }

@@ -17,7 +17,11 @@ const Footer: React.FC = (props) => {
       }}
       component="footer"
     >
-      <Typography variant="h6" component="h2" sx={{ marginBottom: "8px" }}>
+      <Typography
+        variant="h6"
+        component="h2"
+        sx={{ marginBottom: "8px", color: "primary.contrastText" }}
+      >
         Contact Me
       </Typography>
       <Box
