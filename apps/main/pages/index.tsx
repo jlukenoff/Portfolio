@@ -32,33 +32,39 @@ const Home: NextPage = () => {
           />
           <CardContent>
             <Typography paragraph>
-              My aptitude for problem-solving and technology has driven my
-              ability to design, develop, deploy and maintain robust and
-              performant software. I have implemented integrations with legacy
-              systems as well as those on the bleeding edge by remaining
-              versatile and approaching every problem as a puzzle to be solved.
-              I am most skilled in full-stack Typescript (primarily NodeJS and
-              React) but also have robust experience in Python, as well as some
-              experience in Golang, Java, and Scala.
+              As an experienced software engineer, I am driven by my passion for
+              problem-solving and technology. I specialize in full-stack
+              TypeScript, with expertise in Node.js and React, as well as robust
+              experience in Python, Golang, Java, and Scala. My ability to
+              design, develop, deploy, and maintain robust and performant
+              software has been honed through years of experience building
+              cutting-edge applications.
               <br />
-              <br />I moved to the Bay Area in 2014 from a small town in
-              Indiana. Fulfilled one of my dreams, by starting a business at the
-              age of 21 - Lukenoff Associates. I built my business by gathering
-              a full force of clients, traveling around the Bay Area providing
-              home remodeling and repair services.
               <br />
-              <br /> Eventually, I decided it was time to switch careers, and
-              finally enter the world of Tech in the Silicon Valley. I spent 6
-              months learning the basics of programming and was accepted to one
-              of the top Software Engineering bootcamps in the Bay Area, Hack
-              Reactor. Upon completion of Hack Reactor I landed my first job as
-              an engineer at Narvar, where I have worked in collaboration with
-              Enterprise and Commercial e-commerce brands to implement solutions
-              that simplify the lives of every day consumers. <br />
+              After moving to the Bay Area in 2014 from a small town in Indiana,
+              I fulfilled my dream of starting a business at the age of 21 with
+              Lukenoff Associates. I built the business by gathering a full
+              force of clients and traveling around the Bay Area to provide home
+              remodeling and repair services.
               <br />
-              These days I am working to enable and scale the Enterprise Data
-              platform at Asana where I am gaining more backend + infrastructure
-              experience to continue my journey as a Software Engineer.
+              <br />
+              Eventually, I decided to switch careers and enter the world of
+              tech in Silicon Valley. I spent six months learning the basics of
+              programming and was accepted to one of the top software
+              engineering bootcamps in the Bay Area, Hack Reactor. Upon
+              completion of Hack Reactor, I landed my first job as an engineer
+              at Narvar, where I collaborated with enterprise and commercial
+              e-commerce brands to implement solutions that simplify the lives
+              of everyday consumers.
+              <br />
+              <br />
+              Currently, I am working at Asana, where I am focused on enabling
+              and scaling the Enterprise Data platform. This role has allowed me
+              to gain more experience in backend and infrastructure development
+              and continue my journey as a software engineer. With my years of
+              experience in the industry and my passion for delivering top-notch
+              solutions, I am always excited to take on new challenges and help
+              businesses achieve their goals.
             </Typography>
           </CardContent>
         </Card>
