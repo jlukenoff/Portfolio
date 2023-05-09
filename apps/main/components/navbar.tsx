@@ -15,7 +15,7 @@ import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
 
 const paths = [
-  { label: "ABOUT", path: "/" },
+  { label: "ABOUT", path: "/about" },
   { label: "TECH", path: "/tech" },
   { label: "RESUME", path: "/resume" },
 ];
@@ -24,6 +24,8 @@ const NavBar: React.FC = () => {
   const isMobile = useMediaQuery("(max-width: 576px)");
   const { pathname } = useRouter();
   const [anchorEl, setAnchorEl] = useState<Element | null>(null);
+
+  const pathIdx = paths.findIndex(({ path }) => path === pathname);
 
   return (
     <AppBar position="static" elevation={1}>
@@ -37,7 +39,7 @@ const NavBar: React.FC = () => {
         </Typography>
         {!isMobile ? (
           <Tabs
-            value={paths.findIndex(({ path }) => path === pathname) || 0}
+            value={pathIdx > -1 ? pathIdx : null}
             indicatorColor="secondary"
             sx={{
               alignItems: "center",
