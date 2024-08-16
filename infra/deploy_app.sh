@@ -16,6 +16,10 @@ docker buildx create --use
 # Build and push the image for multiple architectures
 docker buildx build --platform linux/amd64,linux/arm64 -t "$ECR_REPO_URL/portfolio:$CURRENT_GIT_SHA" --push "$PROJECT_DIR"
 
-# Update the ecs service
-cd "$PROJECT_DIR/infra" && terraform apply -var "image_tag=$CURRENT_GIT_SHA" && cd -
+export IMAGE_URL="$ECR_REPO_URL/portfolio:$CURRENT_GIT_SHA"
 
+echo "Pushed image: $IMAGE_URL"
+
+export TF_VAR_image_tag="$CURRENT_GIT_SHA"
+
+echo "Run \`cd $(dirname $0) && terraform apply\` to update the ECS service..."
