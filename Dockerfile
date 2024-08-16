@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM node:18-alpine AS base
+FROM node:18-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -17,7 +17,7 @@ RUN \
 
 
 # Rebuild the source code only when needed
-FROM --platform=$BUILDPLATFORM base AS builder
+FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -35,7 +35,7 @@ RUN \
 	fi
 
 # Production image, copy all the files and run next
-FROM --platform=$TARGETPLATFORM base AS runner
+FROM base AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
