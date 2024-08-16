@@ -10,8 +10,8 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import Tab from "@mui/material/Tab";
-import { Menu as MenuIcon } from "@mui/icons-material";
-import Link, { LinkProps } from "next/link";
+import MenuIcon from "@mui/icons-material/Menu";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 const paths = [

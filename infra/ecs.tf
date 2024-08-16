@@ -24,6 +24,10 @@ resource "aws_ecs_service" "portfolio_service" {
   }
 }
 
+resource "aws_cloudwatch_log_group" "ecs_portfolio" {
+  name              = "/ecs/portfolio"
+  retention_in_days = 7
+}
 
 # Create an ECS Task Definition
 resource "aws_ecs_task_definition" "portfolio_task" {
@@ -45,6 +49,14 @@ resource "aws_ecs_task_definition" "portfolio_task" {
           protocol      = "tcp"
         }
       ]
+      logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          "awslogs-group"         = "${aws_cloudwatch_log_group.ecs_portfolio.name}"
+          "awslogs-region"        = "us-east-1"
+          "awslogs-stream-prefix" = "ecs"
+        }
+      }
     }
   ])
 
