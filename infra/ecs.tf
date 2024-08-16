@@ -36,7 +36,7 @@ resource "aws_ecs_task_definition" "portfolio_task" {
   container_definitions = jsonencode([
     {
       name      = "portfolio"
-      image     = "${aws_ecr_repository.portfolio.repository_url}:latest"
+      image     = "${aws_ecr_repository.portfolio.repository_url}:${var.image_tag}"
       essential = true
       portMappings = [
         {

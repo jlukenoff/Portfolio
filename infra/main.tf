@@ -2,6 +2,10 @@ provider "aws" {
   region = "us-east-1"
 }
 
+variable "image_tag" {
+	default = "latest"
+}
+
 locals {
   portfolio_host = "jlukenoff.com"
 }
@@ -41,11 +45,6 @@ resource "aws_acm_certificate" "cert" {
   lifecycle {
     create_before_destroy = true
   }
-}
-
-resource "aws_acm_certificate_validation" "example" {
-  certificate_arn         = aws_acm_certificate.cert.arn
-  validation_record_fqdns = [local.portfolio_host]
 }
 
 # Security group for ALB
