@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "functions/lib",
+    "noEmit": false,
+    "module": "CommonJS",
+    "target": "ES6",
+    "skipLibCheck": true
+  },
+  "include": ["./functions/src/*"],
+  "exclude": ["node_modules", "**/node_modules/*"]
+}

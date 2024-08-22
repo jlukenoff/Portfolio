@@ -1,7 +1,7 @@
 import { Box, Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
 import Images from "../config/images";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import loader from "../utils/images";
 
 const Footer: React.FC = (props) => {

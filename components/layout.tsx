@@ -8,45 +8,25 @@ interface LayoutProps {
   children?: React.ReactNode;
 }
 
-const BgImage = styled("div")({
-  position: "fixed",
-  width: "100%",
-  height: "100%",
-  top: 0,
-  left: 0,
-  zIndex: -2,
-  background: `url(${(loader as any)({
-    src: Images.Background,
-  })}) center top / cover no-repeat`,
-  backgroundAttachment: "fixed",
-});
+const BackgroundGradient: React.FC = () => (
+  <div
+    className="fixed w-full h-full top-0 left-0 z-[-1]"
+    style={{ backgroundColor: "#f7f7f7" }}
+  />
+);
 
-const Gradient = styled("div")({
-  position: "fixed",
-  width: "100%",
-  height: "100%",
-  top: 0,
-  left: 0,
-  backgroundColor: "#fff",
-  opacity: 0.5,
-  zIndex: -1,
-});
-
-const PageLayout = styled("div")(({ theme }) => {
-  return {
-    width: "auto",
-    maxWidth: "926px",
-    minHeight: `calc(100vh - ${theme.spacing(5)})`,
-    position: "relative",
-    margin: `${theme.spacing(5)} auto`,
-  };
-});
+const PageLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
+  return (
+    <div className="w-auto min-h-[calc(100vh-1.25rem)] relative my-5 mx-auto">
+      {children}
+    </div>
+  );
+};
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <BgImage />
-      <Gradient />
+      <BackgroundGradient />
       <PageLayout>{children}</PageLayout>
       <Footer />
     </>

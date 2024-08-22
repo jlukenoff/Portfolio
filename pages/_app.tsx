@@ -7,6 +7,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "../config/theme";
 import NavBar from "../components/navbar";
 import Layout from "../components/layout";
+import { Inter } from "next/font/google";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -16,7 +17,6 @@ interface AppProps extends BaseAppProps {
 
 export default function App({
   Component,
-  pageProps,
   emotionCache = clientSideEmotionCache,
 }: AppProps) {
   return (
@@ -28,7 +28,7 @@ export default function App({
         <CssBaseline />
         <NavBar />
         <Layout>
-          <Component {...pageProps} />
+          <Component />
         </Layout>
       </ThemeProvider>
     </CacheProvider>

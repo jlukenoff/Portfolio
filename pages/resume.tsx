@@ -4,9 +4,9 @@ import { Box, Button, Container, Typography } from "@mui/material";
 
 const ResumePage = () => {
   const pdfUrl =
-    "https://storage.googleapis.com/john-lukenoff-portfolio.appspot.com/Resume.pdf";
+    "https://jlukenoff-portfolio-static-assets.s3.amazonaws.com/public/static/Resume.pdf";
   const docxUrl =
-    "https://storage.googleapis.com/john-lukenoff-portfolio.appspot.com/Resume.docx";
+    "https://jlukenoff-portfolio-static-assets.s3.amazonaws.com/public/static/Resume.docx";
 
   return (
     <Container>

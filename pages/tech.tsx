@@ -1,8 +1,9 @@
 import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 import type { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import { styled } from "@mui/material/styles";
-import loader from "../utils/images";
+import loader, { ImageUtil } from "../utils/images";
 
 import {
   languages,
@@ -11,7 +12,6 @@ import {
   tools,
   TechCardItem,
 } from "../config/tech";
-import Image from "next/image";
 
 const SectionWrapper = styled("div")({
   padding: "2rem",
@@ -44,11 +44,9 @@ const TechSection: React.FC<TechSectionProps> = ({ title, items }) => {
                     }}
                   >
                     <Image
-                      loader={loader}
                       layout="fill"
-                      src={logo}
+                      src={ImageUtil.get(logo)}
                       alt={`${name} logo`}
-                      objectFit="contain"
                     />
                   </Box>
                   <Typography gutterBottom sx={{ fontWeight: "bold" }}>

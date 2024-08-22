@@ -1,12 +1,12 @@
-import { StaticImageData } from "next/image";
+import { StaticImageData } from "next/legacy/image";
 
-import Images from "./images";
+import RelativeImagePath from "./images";
 
 export interface TechCardItem {
   name: string;
   description: string;
   projectList: Projects[];
-  logo: Images;
+  logo: keyof typeof RelativeImagePath;
 }
 
 export enum Projects {
@@ -30,7 +30,7 @@ export const languages: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: Images.Typescript,
+    logo: "Typescript",
   },
   {
     name: "Python",
@@ -43,7 +43,7 @@ export const languages: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: Images.Python,
+    logo: "Python",
   },
 ];
 
@@ -59,7 +59,7 @@ export const frontEnd: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: Images.React,
+    logo: "React",
   },
   {
     name: "Styled Components",
@@ -72,7 +72,7 @@ export const frontEnd: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: Images.Emotion,
+    logo: "Emotion",
   },
   {
     name: "HTML5",
@@ -85,7 +85,7 @@ export const frontEnd: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: Images.Html5,
+    logo: "Html5",
   },
 ];
 
@@ -95,28 +95,28 @@ export const backEnd: TechCardItem[] = [
     description:
       "I am most fluent in NodeJS as a backend language and also use NodeJS on the regular for quick scripts and making painstaking manual tasks into CLI's to automate workflows.",
     projectList: [Projects.Vacationly, Projects.Shopr, Projects.HomeServer],
-    logo: Images.Nodejs,
+    logo: "Nodejs",
   },
   {
     name: "ExpressJS",
     description:
       "I have used ExpressJS in most of my applications that require a well-structured, scalable backend. I have a refined discipline for writing Express servers using MVC architecture. Leveraging best practices in separating of business logic, data models, and controllers",
     projectList: [Projects.Vacationly, Projects.Shopr, Projects.HomeServer],
-    logo: Images.Express,
+    logo: "Express",
   },
   {
     name: "PostgreSQL",
     description:
       "I have used Postgres to add persistence to applications that require relational data models or read-heavy use-cases.",
     projectList: [Projects.Vacationly, Projects.Shopr, Projects.HomeServer],
-    logo: Images.Postgresql,
+    logo: "Postgresql",
   },
   {
     name: "MongoDB",
     description:
       "I've used mongoDB as a quick solution for adding a persistence layer on top of my application where relational data structures are not required.",
     projectList: [Projects.Vacationly, Projects.Shopr, Projects.HomeServer],
-    logo: Images.Mongodb,
+    logo: "Mongodb",
   },
 ];
 
@@ -126,14 +126,14 @@ export const tools: TechCardItem[] = [
     description:
       "I've achieved massive workflow and scalability improvements with Kubernetes. I've contributed to existing k8s setups and implemented ground up builds at Asana",
     projectList: [Projects.Narvar, Projects.HomeServer, Projects.Asana],
-    logo: Images.Kubernetes,
+    logo: "Kubernetes",
   },
   {
     name: "AWS",
     description:
       "AWS has dominated the cloud-native market for enterprises. At Asana I re-platformed the enterprise data pipeline stack onto dedicated AWS accounts from the ground up.",
     projectList: [Projects.Narvar, Projects.Vacationly, Projects.Asana],
-    logo: Images.Aws,
+    logo: "Aws",
   },
   {
     name: "Docker",
@@ -146,7 +146,7 @@ export const tools: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: Images.Docker,
+    logo: "Docker",
   },
   {
     name: "Git + Github",
@@ -159,7 +159,7 @@ export const tools: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: Images.Github,
+    logo: "Github",
   },
 
   {
@@ -172,7 +172,7 @@ export const tools: TechCardItem[] = [
       Projects.Portfolio,
       Projects.HomeServer,
     ],
-    logo: Images.Linux,
+    logo: "Linux",
   },
   {
     name: "Jest",
@@ -185,6 +185,6 @@ export const tools: TechCardItem[] = [
       Projects.Shopr,
       Projects.HomeServer,
     ],
-    logo: Images.Jest,
+    logo: "Jest",
   },
 ];
