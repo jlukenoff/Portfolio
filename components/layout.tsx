@@ -1,7 +1,4 @@
 import React from "react";
-import Images from "../config/images";
-import loader from "../utils/images";
-import { styled } from "@mui/material/styles";
 import Footer from "./footer";
 
 interface LayoutProps {
@@ -11,7 +8,7 @@ interface LayoutProps {
 const BackgroundGradient: React.FC = () => (
   <div
     className="fixed w-full h-full top-0 left-0 z-[-1]"
-    style={{ backgroundColor: "#f7f7f7" }}
+    style={{ background: "linear-gradient(180deg, #f7f7f7 0%, #ffffff 100%)" }}
   />
 );
 

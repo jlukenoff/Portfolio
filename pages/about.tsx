@@ -2,7 +2,7 @@ import * as TextContent from "../config/text_content";
 import { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { ImageUtil } from "../utils/images";
+import Images from "../config/images";
 
 const About: NextPage = () => {
   return (
@@ -15,7 +15,7 @@ const About: NextPage = () => {
       <main className="max-w-6xl mx-auto h-auto flex flex-col items-center bg-neutral-100 bg-opacity-90 rounded-md shadow-lg overflow-hidden p-8">
         <div className="flex flex-col items-center text-gray-950">
           <Image
-            src={ImageUtil.get("Profile")}
+            src={Images.Profile}
             width={400}
             height={400}
             alt="John Lukenoff profile picture"

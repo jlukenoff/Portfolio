@@ -1,10 +1,14 @@
-const path = require("path");
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import createMdx from "@next/mdx";
+
 /** @type {'static' | 'standalone' | 'firebase' | undefined} */
 const NEXT_APP_BUILD_MODE = process.env.NEXT_APP_BUILD_MODE;
 
 function getNextConfig() {
   /** @type {import('next').NextConfig} */
   const config = {
+    pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
     reactStrictMode: true,
     swcMinify: true,
     images: {
@@ -33,4 +37,13 @@ function getNextConfig() {
   return config;
 }
 
-module.exports = getNextConfig();
+const baseNextConfig = getNextConfig();
+const withMdx = createMdx({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypeHighlight],
+  },
+});
+
+export default withMdx(baseNextConfig);

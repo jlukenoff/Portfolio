@@ -4,7 +4,7 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
-import { ImageUtil } from "../utils/images";
+import Images from "../config/images";
 
 const pages = [
   { label: "About", path: "/about" },
@@ -24,7 +24,7 @@ export default function NavBar() {
         <div className="flex lg:flex-1">
           <Link href="/">
             <Image
-              src={ImageUtil.get("MainLogoHorizontalGrey")}
+              src={Images.MainLogoHorizontalGrey}
               width={150}
               height={50}
               alt="John Lukenoff Main Logo. Image text reads 'John Lukenoff: Build better, faster'"

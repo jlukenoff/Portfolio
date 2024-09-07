@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { ImageUtil } from "../utils/images";
+import Images from "../config/images";
 
 const Home: NextPage = () => {
   return (
@@ -9,6 +9,12 @@ const Home: NextPage = () => {
       <Head>
         <title>John Lukenoff | Home</title>
         <meta name="description" content="John Lukenoff - Home" />
+        <meta name="og:title" content="John Lukenoff | Home" />
+        <meta
+          name="og:description"
+          content="John Lukenoff - Portfolio and Blog"
+        />
+        <meta name="og:image" content={Images.MainLogo} />
       </Head>
 
       <main className="max-w-7xl mx-auto p-8">
@@ -16,7 +22,7 @@ const Home: NextPage = () => {
         <section className="text-center mb-12 p-8 rounded-md">
           <div className="flex items-center justify-center mb-4">
             <Image
-              src={ImageUtil.get("MainLogo")}
+              src={Images.MainLogo}
               width="500"
               height="500"
               alt="John Lukenoff logo. with slogan 'Building better, faster'"

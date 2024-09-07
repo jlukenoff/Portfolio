@@ -1,4 +1,6 @@
-// Logos
+export const BASE_RESOURCE_PATH =
+  "https://jlukenoff-portfolio-static-assets.s3.amazonaws.com/public/static";
+
 export const RelativeImagePath = {
   MainLogo: "john_lukenoff_main_logo.png",
   MainLogoHorizontalGrey: "john_lukenoff_main_logo_horizontal_grey.png",
@@ -20,10 +22,18 @@ export const RelativeImagePath = {
   Background: "background.png",
   Profile: "profile.png",
   Linkedin: "logos/linkedin.png",
-  Email: "logos/email.png",
+	Email: "logos/email.png",
+	Golang: "logos/golang.png",
 } as const;
 
-export type RelativeImagePath =
+export type RelativeImagePathValue =
   (typeof RelativeImagePath)[keyof typeof RelativeImagePath];
 
-export default RelativeImagePath;
+const Images = Object.fromEntries(
+  Object.entries(RelativeImagePath).map(([key, value]) => [
+    key,
+    `${BASE_RESOURCE_PATH}/${value}`,
+  ])
+) as Record<keyof typeof RelativeImagePath, string>;
+
+export default Images;
