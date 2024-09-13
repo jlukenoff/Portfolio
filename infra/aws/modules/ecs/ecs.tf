@@ -1,3 +1,7 @@
+variable "image_tag" {
+  default = "latest"
+}
+
 # Create an ECS Cluster
 resource "aws_ecs_cluster" "portfolio_cluster" {
   name = "portfolio-cluster"

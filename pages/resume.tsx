@@ -1,56 +1,41 @@
-// pages/resume.js
+// pages/resume.tsx
 import React from "react";
-import { Box, Button, Container, Typography } from "@mui/material";
 
 const ResumePage = () => {
   const pdfUrl =
-    "https://storage.googleapis.com/john-lukenoff-portfolio.appspot.com/Resume.pdf";
+    "https://jlukenoff-portfolio-static-assets.s3.amazonaws.com/public/static/Resume.pdf";
   const docxUrl =
-    "https://storage.googleapis.com/john-lukenoff-portfolio.appspot.com/Resume.docx";
+    "https://jlukenoff-portfolio-static-assets.s3.amazonaws.com/public/static/Resume.docx";
 
   return (
-    <Container>
-      <Typography
-        variant="h3"
-        component="h1"
-        sx={{
-          textAlign: "center",
-          marginTop: "16px",
-          marginBottom: "16px",
-          color: "text.secondary",
-        }}
-      >
-        My Resume
-      </Typography>
-      <Box sx={{ marginBottom: "16px" }}>
+    <div className="container mx-auto p-4">
+      <h1 className="text-3xl text-center my-4 text-gray-700">My Resume</h1>
+      <div className="mb-4">
         <iframe
           src={pdfUrl}
           width="100%"
           height="600px"
-          style={{ border: "none" }}
+          className="border-none"
           title="Resume PDF"
         ></iframe>
-      </Box>
-      <Box
-        sx={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}
-      >
-        <Button
+      </div>
+      <div className="flex justify-center mb-4">
+        <a
           href={pdfUrl}
           download="John-Lukenoff-Resume.pdf"
-          variant="contained"
-          sx={{ marginRight: "8px" }}
+          className="btn btn-primary mr-2"
         >
           Download PDF
-        </Button>
-        <Button
+        </a>
+        <a
           href={docxUrl}
           download="John-Lukenoff-Resume.docx"
-          variant="contained"
+          className="btn btn-primary"
         >
           Download DOCX
-        </Button>
-      </Box>
-    </Container>
+        </a>
+      </div>
+    </div>
   );
 };
 

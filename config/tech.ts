@@ -1,12 +1,10 @@
-import { StaticImageData } from "next/image";
-
 import Images from "./images";
 
 export interface TechCardItem {
   name: string;
   description: string;
   projectList: Projects[];
-  logo: Images;
+  logo: string;
 }
 
 export enum Projects {
@@ -44,6 +42,13 @@ export const languages: TechCardItem[] = [
       Projects.HomeServer,
     ],
     logo: Images.Python,
+  },
+  {
+    name: "Go",
+    description:
+      "My go-to systems language for infra and backend services. I love the speed and simplicity of Go for building scalable services.",
+    projectList: [],
+    logo: Images.Golang,
   },
 ];
 

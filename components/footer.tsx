@@ -1,83 +1,56 @@
-import { Box, Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
 import Images from "../config/images";
-import Image from "next/image";
-import loader from "../utils/images";
+import Image from "next/legacy/image";
 
-const Footer: React.FC = (props) => {
+interface FooterItem {
+  label: string;
+  url: string;
+  img: string;
+}
+
+const footerItems: FooterItem[] = [
+  {
+    label: "linkedin",
+    url: "https://linkedin.com/in/jlukenoff",
+    img: Images.Linkedin,
+  },
+  {
+    label: "github",
+    url: "https://github.com/jlukenoff",
+    img: Images.Github,
+  },
+  {
+    label: "email",
+    url: "mailto:john@jlukenoff.com",
+    img: Images.Email,
+  },
+];
+
+const Footer: React.FC = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        height: "100px",
-        backgroundColor: "primary.main",
-      }}
-      component="footer"
-    >
-      <Typography
-        variant="h6"
-        component="h2"
-        sx={{ marginBottom: "8px", color: "primary.contrastText" }}
-      >
-        Contact Me
-      </Typography>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        {[
-          {
-            label: "linkedin",
-            url: "https://linkedin.com/in/jlukenoff",
-            img: Images.Linkedin,
-          },
-          {
-            label: "github",
-            url: "https://github.com/jlukenoff",
-            img: Images.Github,
-          },
-          {
-            label: "email",
-            url: "mailto:john@jlukenoff.com",
-            img: Images.Email,
-          },
-        ].map(({ label, url, img }) => (
-          <IconButton
+    <footer className="flex flex-col items-center justify-center h-24 bg-primary-main">
+      <h2 className="mb-2 text-lg text-primary-contrastText">Contact Me</h2>
+      <div className="flex items-center justify-center">
+        {footerItems.map(({ label, url, img }) => (
+          <a
             href={url}
             key={label}
             aria-label={`${label} icon`}
             target="_blank"
             rel="noopener noreferrer"
-            sx={{
-              "& > span": {
-                overflow: "visible !important",
-              },
-              "& > span > img": {
-                filter: "invert(100%) brightness(100%)",
-                transition: "transform 0.3s ease-in-out", // Add a smooth transition for the transform
-              },
-              "&:hover > span > img": {
-                transform: "scale(1.2)", // Scale the image when hovered
-              },
-            }}
+            className="p-2 transition-transform duration-300 ease-in-out transform hover:scale-125"
           >
             <Image
-              loader={loader}
+              src={img}
               width={24}
               height={24}
-              src={img}
               alt={`${label} logo`}
+              className="filter invert brightness-100"
             />
-          </IconButton>
+          </a>
         ))}
-      </Box>
-    </Box>
+      </div>
+    </footer>
   );
 };
 

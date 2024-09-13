@@ -1,0 +1,93 @@
+import MdxLayout from '../../components/mdx-layout'
+
+# Deploying a Next.js Static Site on Firebase: My Portfolio Journey
+
+## Introduction
+
+In this blog post, I'll walk you through my experience of building and deploying a portfolio site using Next.js 14 and TypeScript, and hosting it as a static web page on Firebase. I'll cover the technical setup, challenges faced, and the tradeoffs I considered along the way.
+
+## Tech Stack Overview
+
+- **Next.js 14**: Using the Pages Router
+- **TypeScript**: Integrated throughout the project
+- **Firebase Hosting**: For deploying the static export
+- **Static Site Generation (SSG)**: Leveraging Next.js's SSG features
+
+## Project Setup
+
+I started this project from scratch, opting not to use a template. This gave me full control over the setup and allowed me to understand each piece of the puzzle.
+
+### Next.js and TypeScript Configuration
+
+I'm using Next.js 14 with the Pages Router. TypeScript is integrated into all aspects of the project, including components, API routes (if any), and utility functions. This provides excellent type safety and improves the overall development experience.
+
+Here's a snippet of my `next.config.js`:
+
+```javascript
+module.exports = {
+  output: 'export',
+  images: {
+    unoptimized: true
+  },
+  // other configurations...
+}
+```
+
+### Static Export Considerations
+
+To generate a static export, I'm using the `output: 'export'` configuration in my `next.config.js`. This tells Next.js to produce a static HTML export of the app.
+
+An important note: I've had to disable image optimization by setting `images: { unoptimized: true }`. This is a requirement when using `output: 'export'`, as Next.js's built-in Image Optimization cannot function without a Node.js server.
+
+#### A Note on Image Optimization
+
+While disabling image optimization is necessary for static exports, it's not ideal for performance. As an alternative, you could consider:
+
+1. Pre-optimizing images before adding them to your project.
+2. Using a third-party image optimization service.
+3. Implementing client-side lazy loading for images.
+
+These approaches can help mitigate the performance impact of unoptimized images in a static export.
+
+## Deployment Process
+
+My deployment workflow is straightforward:
+
+```bash
+next build && firebase deploy --only hosting
+```
+
+This command builds the Next.js project and then deploys it to Firebase Hosting. The simplicity of this process is one of the main advantages of this setup.
+
+## Hosting Considerations and Tradeoffs
+
+Before settling on Firebase Hosting, I explored a couple of other options:
+
+1. **AWS ECS**: While powerful, it proved to be too expensive for my needs.
+2. **DigitalOcean**: Required more maintenance than I wanted to commit to and was still more expensive than my final choice.
+
+Firebase Hosting stood out for several reasons:
+
+- **Cost-effective**: The free tier is generous for personal projects.
+- **Low maintenance**: Firebase handles most of the infrastructure concerns.
+- **Easy deployment**: Simple CLI commands make updates a breeze.
+- **Good performance**: Firebase's CDN ensures good load times globally.
+
+### Limitations
+
+While this setup works well for my portfolio, it's worth noting some limitations:
+
+1. **No server-side rendering**: All pages are static, which may not be suitable for all types of applications.
+2. **Limited dynamic functionality**: Without a backend, any dynamic features need to be client-side or use external APIs.
+3. **Image optimization challenges**: As mentioned earlier, Next.js's built-in image optimization doesn't work with static exports.
+
+## Conclusion
+
+Deploying a Next.js static site to Firebase has provided me with a cost-effective, low-maintenance solution for my portfolio. The combination of Next.js's powerful development features, TypeScript's type safety, and Firebase's simple hosting has resulted in a setup that's both developer-friendly and performant.
+
+While there are tradeoffs, particularly around dynamic capabilities and image optimization, the benefits outweigh the drawbacks for my specific use case. This approach allows me to focus on creating content and improving my portfolio without worrying about complex infrastructure or high hosting costs.
+
+
+export default function MDXPage({ children }) {
+  return <MdxLayout>{children}</MdxLayout>
+}

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -15,12 +19,15 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.btn {
+  @apply inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700;
+}
+
+.btn-primary {
+  @apply bg-blue-500 hover:bg-blue-700;
+}
+
+/* Match highlight.js codeblock background with the tailwind prose background */
+pre > code.hljs {
+  background-color: var(--tw-prose-pre-bg);
 }

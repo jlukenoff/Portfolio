@@ -1,8 +1,6 @@
-import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { styled } from "@mui/material/styles";
-import loader from "../utils/images";
+import Image from "next/image";
 
 import {
   languages,
@@ -11,12 +9,6 @@ import {
   tools,
   TechCardItem,
 } from "../config/tech";
-import Image from "next/image";
-
-const SectionWrapper = styled("div")({
-  padding: "2rem",
-  margin: "auto",
-});
 
 interface TechSectionProps {
   title: string;
@@ -25,45 +17,32 @@ interface TechSectionProps {
 
 const TechSection: React.FC<TechSectionProps> = ({ title, items }) => {
   return (
-    <SectionWrapper>
-      <Typography variant="h3" component="h2" color="text.primary">
-        {title}
-      </Typography>
-      <Grid container justifyContent="flex-start" mt={1} spacing={2}>
+    <div className="py-8 mx-auto">
+      <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
+      <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
         {items.map(({ name, description, logo }) => (
-          <Grid item key={name} xs={12} md={4} display="flex">
-            <Card variant="outlined">
-              <CardContent>
-                <Box>
-                  <Box
-                    sx={{
-                      position: "relative",
-                      height: "3rem",
-                      width: "3rem",
-                      marginBottom: "0.5rem",
-                    }}
-                  >
-                    <Image
-                      loader={loader}
-                      layout="fill"
-                      src={logo}
-                      alt={`${name} logo`}
-                      objectFit="contain"
-                    />
-                  </Box>
-                  <Typography gutterBottom sx={{ fontWeight: "bold" }}>
-                    {name}
-                  </Typography>
-                </Box>
-                <Typography gutterBottom>{description}</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
+          <div key={name} className="flex">
+            <div className="border border-gray-200 rounded-lg shadow-sm p-4 w-full">
+              <div className="flex items-center mb-4">
+                <div className="relative h-12 w-12 mr-4 flex items-center">
+                  <Image
+                    width={50}
+                    height={50}
+                    src={logo}
+                    alt={`${name} logo`}
+                  />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{name}</h3>
+              </div>
+              <p className="text-gray-700">{description}</p>
+            </div>
+          </div>
         ))}
-      </Grid>
-    </SectionWrapper>
+      </div>
+    </div>
   );
 };
+
 const Tech: NextPage = () => {
   return (
     <>
@@ -73,7 +52,7 @@ const Tech: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="container mx-auto px-4">
         <TechSection title="Languages I speak" items={languages} />
         <TechSection title="Front End" items={frontEnd} />
         <TechSection title="Back End" items={backEnd} />
