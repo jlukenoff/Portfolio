@@ -3,7 +3,7 @@ export const aboutMe = (
     I am the Tech Lead for Logging and Experiments at Asana, where I focus on
     building observability and experimentation platforms that empower Data
     Science and R&D teams to make data-driven decisions at scale. My work
-    ensures that Asana's engineering and product teams have the tools to
+    ensures that Asana&apos;s engineering and product teams have the tools to
     measure, analyze, and iterate efficiently, helping drive innovation across
     the company.
     <br />
