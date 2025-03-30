@@ -1,7 +1,10 @@
 export const BASE_RESOURCE_PATH =
   "https://jlukenoff-portfolio-static-assets.s3.amazonaws.com/public/static";
 
-export const RelativeImagePath = {
+export const BACKGROUND_IMAGE = "background.png";
+export const PROFILE_IMAGE = "profile.png";
+
+export const Logos = {
   MainLogo: "john_lukenoff_main_logo.png",
   MainLogoHorizontalGrey: "john_lukenoff_main_logo_horizontal_grey.png",
   React: "logos/react.png",
@@ -19,21 +22,24 @@ export const RelativeImagePath = {
   Kubernetes: "logos/kubernetes.png",
   Aws: "logos/aws.png",
   Python: "logos/python.png",
-  Background: "background.png",
-  Profile: "profile.png",
   Linkedin: "logos/linkedin.png",
-	Email: "logos/email.png",
-	Golang: "logos/golang.png",
+  Email: "logos/email.png",
+  Golang: "logos/golang.png",
 } as const;
 
-export type RelativeImagePathValue =
-  (typeof RelativeImagePath)[keyof typeof RelativeImagePath];
+const AllImagePaths = {
+  ...Logos,
+  Background: BACKGROUND_IMAGE,
+  Profile: PROFILE_IMAGE,
+} as const;
+
+export type ImagePathValue = (typeof AllImagePaths)[keyof typeof AllImagePaths];
 
 const Images = Object.fromEntries(
-  Object.entries(RelativeImagePath).map(([key, value]) => [
+  Object.entries(AllImagePaths).map(([key, value]) => [
     key,
     `${BASE_RESOURCE_PATH}/${value}`,
   ])
-) as Record<keyof typeof RelativeImagePath, string>;
+) as Record<keyof typeof AllImagePaths, string>;
 
 export default Images;

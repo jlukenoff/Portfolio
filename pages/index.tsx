@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Images from "../config/images";
+import blogPosts from "../config/blog_posts";
+import BlogCard from "../components/blog_card";
 
 const Home: NextPage = () => {
   return (
@@ -65,10 +67,10 @@ const Home: NextPage = () => {
         {/* Blog Section */}
         <section>
           <h2 className="text-4xl font-bold mb-6">Blog Posts</h2>
-          <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
-            <p className="text-gray-700">
-              Blog posts will be displayed here soon. Stay tuned!
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.map((post) => (
+              <BlogCard key={post.name} {...post} />
+            ))}
           </div>
         </section>
       </main>

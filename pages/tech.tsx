@@ -53,7 +53,7 @@ const Tech: NextPage = () => {
       </Head>
 
       <main className="container mx-auto px-4">
-        <TechSection title="Languages I speak" items={languages} />
+        <TechSection title="Languages" items={languages} />
         <TechSection title="Front End" items={frontEnd} />
         <TechSection title="Back End" items={backEnd} />
         <TechSection title="Tooling + Ops" items={tools} />

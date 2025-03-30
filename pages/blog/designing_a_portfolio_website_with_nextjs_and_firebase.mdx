@@ -1,6 +1,14 @@
-import MdxLayout from '../../components/mdx-layout'
+import MdxLayout from "../../components/mdx-layout";
 
 # Deploying a Next.js Static Site on Firebase: My Portfolio Journey
+
+<img
+  src="https://jlukenoff-portfolio-static-assets.s3.amazonaws.com/public/static/blog/designing_a_portfolio_website_with_nextjs_and_firebase.png"
+  alt="Designing a Portfolio Website with NextJS and Firebase"
+  className="w-full rounded-lg shadow-lg mb-8"
+/>
+
+You can find the complete source code for this project on [GitHub](https://github.com/jlukenoff/portfolio).
 
 ## Introduction
 
@@ -25,12 +33,12 @@ Here's a snippet of my `next.config.js`:
 
 ```javascript
 module.exports = {
-  output: 'export',
+  output: "export",
   images: {
-    unoptimized: true
+    unoptimized: true,
   },
   // other configurations...
-}
+};
 ```
 
 ### Static Export Considerations
@@ -87,7 +95,6 @@ Deploying a Next.js static site to Firebase has provided me with a cost-effectiv
 
 While there are tradeoffs, particularly around dynamic capabilities and image optimization, the benefits outweigh the drawbacks for my specific use case. This approach allows me to focus on creating content and improving my portfolio without worrying about complex infrastructure or high hosting costs.
 
-
 export default function MDXPage({ children }) {
-  return <MdxLayout>{children}</MdxLayout>
+  return <MdxLayout>{children}</MdxLayout>;
 }
